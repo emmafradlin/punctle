@@ -7,34 +7,59 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
+<style>
+body {
+    background: #181818;
+}
+
+h1 {
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 0px;
+}
+
+b {
+    font-size: 50px;
+}
+
+center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.button, .lol {
+    background-color: #181818;
+    text-indent: 0;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 75px;
+    width: 237px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 4px;
+    transition-duration: 0.2s;
+}
+.button:hover, .lol {
+    background-color: #3e3c3a;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+</style>
 <body>
-    
-    <div id="game-wrapper">
-        <div id = "controls">
-            <div id="sentence"></div>
-            <button id="enter-button">Enter</button>
-            <button id="nextGuess">Next Guess</button>
-            <button id="nextGame">Next Round</button>
-        </div>
-
-
-        <div id = "results">
-            <div id="grid"></div>
-            <div id = "seeSentence">
-                <button class = "viewSentence" id="see1" disabled>See in sentence</button>
-                <button class = "viewSentence" id="see2" disabled>See in sentence</button>
-                <button class = "viewSentence" id="see3" disabled>See in sentence</button>
-                <button class = "viewSentence" id="see4" disabled>See in sentence</button>
-                <button class = "viewSentence" id="see5" disabled>See in sentence</button>
-                <button class = "viewSentence" id="see6" disabled>See in sentence</button>
-            </div>
-        </div>
-        <div id="keyboard"></div>
-    </div>
-
-    <div id="toast"></div>
-    
-    <script src="script.js"></script>
+    <center>
+        <h1>Welcome to Punctle!</h1><br/>
+        <a href="game.html?mode=daily" class="button" id="boxes">Daily Challenge</a><br/>
+        <a href="game.html?mode=easy" class="button" id="boxes">Easy</a><br/>
+        <a href="game.html?mode=medium" class="button" id="boxes">Medium</a><br/>
+        <a href="game.html?mode=hard" class="button" id="boxes">Hard</a><br/>
+    </center>
 </body>
 
 </html>

@@ -3,10 +3,15 @@
 //parethenses and quation marks have been removed
 //when you click see in sentence while viewing a guess that you just entered it messes everything up (colors)
 
+//possible punctuation
+const punctuation = ['.', ',', '?', '!', ';', ':', '-'];
+const MAX_GUESSES = 6
+
 const sentence = document.getElementById("sentence");
 let originalText = "the man";
 let punctuationCount = 0;
 
+let mode = "easy";
 let level = "easy";
 
 let draggedDropBox = null;
@@ -32,9 +37,6 @@ let submitted = false;
 //array that in the end will have a length of five and store each user guess
 let guesses = [];
 
-//possible punctuation
-const punctuation = ['.', ',', '?', '!', ';', ':', '-'];
-
 let punctuationInBoxes = [];
 let dropBoxPunctuation = [];
 
@@ -48,7 +50,6 @@ let fullColors = [];
 const grid = document.getElementById('grid');
 const keyboard = document.getElementById('keyboard');
 
-
 let cleanedSentence;
 
 let correctPunctuation = [];
@@ -57,47 +58,257 @@ let userPunctuation = [];
 //need to change this to be based on the amount removed
 let wordLength;
 
-let updated = [];
+let lastBoxes = [];
 
 let viewSentenceButtons = document.querySelectorAll('.viewSentence');
 
+document.getElementById('enter-button').addEventListener('click', comparePunctuation);
+document.getElementById('nextGame').addEventListener('click', newGame);
 
-//generate random sentence and whole screen
-getRandomSentence();
+//configure seeded random number generator for daily challange
+function RNG(seed) {
+    var m = 2**35 - 31
+    var a = 185852
+    var s = seed % m
+    return function () {
+        return (s = s * a % m) / m
+    }
+}
 
-function getRandomSentence() {
-    fetch('sentences.txt')
-        .then(function(response) {
-            //check if it got it
-            if (!response.ok) {
-                console.error('Failed to load the file');
-                return;
+let selectedDate = null;
+function getDailyChallangeDate(){     
+    if (selectedDate != null)   
+        return selectedDate;
+
+    return formatDate(new Date());
+}
+
+function formatDate(d){
+    let year = d.toLocaleDateString("en-US", {timeZone: "America/New_York", year:"numeric"})
+    let month = d.toLocaleDateString("en-US", {timeZone: "America/New_York", month:"2-digit"})
+    let day = d.toLocaleDateString("en-US", {timeZone: "America/New_York", day:"2-digit"})
+    return year + "-" + month + "-" + day;    
+}
+
+let seededRandom;
+
+function getSeededRandom(max){
+    return Math.floor(Math.abs(seededRandom()) * max);
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+newGame();
+
+function openStats() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closeStats() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    let modal = document.getElementById("stats");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function setupCalendar(){
+    win_dates = [];
+    all_dates = [];
+    for (let key of Object.keys(localStorage)){
+        let key_parts = key.split(':');
+        if (key_parts[0] != "d")
+            continue;
+        let d = key_parts[1];
+        let value = getFromLocalStorage(key);
+        all_dates.push(d);
+        if (value == 1)
+            win_dates.push(d);
+    }
+
+    const options = {
+        selectedWeekends: [],
+        dateMax: formatDate(new Date()),
+        selectedHolidays: all_dates,
+        selectedDates: [getDailyChallangeDate()],
+        onClickDate(self) {
+            if (self.context.selectedDates.length > 0){
+                d = self.context.selectedDates[0];
+                if (d != getDailyChallangeDate()){
+                    selectedDate = d;
+                    newGame();
+                }
             }
-            return response.text();
-        })
-        .then(function(text) {
-            //split the text into sentences and choose one randomly
-            const sentences = text.split('\n').map(sentence => sentence.trim()).filter(sentence => sentence !== '');
-            const randomIndex = Math.floor(Math.random() * sentences.length);
-            const randomSentence = sentences[randomIndex];
+        },
+        onCreateDateEls(self, dateEl) { 
+            let completed = dateEl.hasAttribute('data-vc-date-holiday');
+            let selected = dateEl.hasAttribute('data-vc-date-selected');
+            if (completed){
+                if (selected)
+                    dateEl.style = "background-color: #0000FF;";
 
-            //pass the random sentence to the next method
-            console.log(randomSentence);
-            originalText = randomSentence;
+                const btnEl = dateEl.querySelector('[data-vc-date-btn]');
+                                
+                btnEl.style = "background-color: #00FF00; color: #000000";
+                let d = formatDate(new Date(btnEl.getAttribute("aria-label")));
+                if (win_dates.includes(d))
+                    btnEl.style = "background-color: #00FF00; color: #000000";
+                else
+                    btnEl.style = "background-color: #FF0000; color: #000000";
+            }
+          },
+    }
 
-            //originalText = "the man-walked to school"
+    const { Calendar } = window.VanillaCalendarPro;
+    const calendar = new Calendar('#calendar', options);
+    calendar.init();    
+}
 
-            removePunctuation(originalText)
-            makeGuessBoxes();
-            createGrid();
-            alignButtons();
-            generateKeyboard(); 
-            getCorrectAnswer();
-        })
-        .catch(function(error) {
-            console.error('Error:', error);
-        });
+function setupChart(){
+    const yArray = ["6", "5", "4", "3", "2", "1"];
+    //const xArray = [6, 5, 4, 3, 2, 1];
+    const xArray = [];
 
+    for (let y of yArray){
+        xArray.push(getFromLocalStorage(mode + ":win:" + y));
+    }
+
+    const data = [{
+        x:xArray,
+        y:yArray.map(v => v + "-"),
+        text: xArray.map(Number),
+        type:"bar",
+        orientation:"h",
+        marker: {color:"rgba(0,0,255,0.6)"}
+    }];
+
+    const layout = {margin: {l: 20, r: 0, b: 0, t: 20}};
+
+    Plotly.newPlot("myPlot", data, layout, {staticPlot: true});
+}
+
+function setupTotals(){
+    let num_wins = getFromLocalStorage(mode + ":win");
+    let num_losses = getFromLocalStorage(mode + ":loss");
+    let played = num_wins + num_losses;
+    let win_pct = played > 0 ? Math.round(100*num_wins/played) : "";
+
+    document.getElementById("stats_totals").innerHTML = `Played: ${played}; Win%: ${win_pct}`;
+}
+
+/* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "250px";
+}
+  
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+}
+
+function hasUrlParam(param){
+    const queryString = window.location.search;    
+    const urlParams = new URLSearchParams(queryString);   
+    return urlParams.has(param);
+}
+
+function getUrlParam(param){
+    const queryString = window.location.search;    
+    const urlParams = new URLSearchParams(queryString);   
+    return urlParams.get(param);
+}
+
+async function newGame() {    
+    mode = getUrlParam('mode');        
+    let calendarDisplay = "none";
+    let chartDisplay = "none"
+    if (mode == "daily"){
+        let date = getDailyChallangeDate();
+        seededRandom = RNG(new Date(date).getTime());
+        let levelIndex = getSeededRandom(3);
+        console.log("Daily challange level index: ", levelIndex);
+        level = ["easy", "medium", "hard"][levelIndex];
+        calendarDisplay = "block";
+        chartDisplay = "none";
+        setupCalendar();
+        document.getElementById('nextGame').style.display = "none";
+        console.log(`Starting daily challange for ${date} game with level ${level}`);
+    } else {
+        level = mode;
+        calendarDisplay = "none";
+        //chartDisplay = getFromLocalStorage(mode + ":win") > 0 ? "block" : "none";
+        chartDisplay = "block"
+        setupChart();
+        document.getElementById('nextGame').style.display = "block";
+        console.log("Starting new game with level: " + level);
+    }
+
+    setupTotals();
+    document.getElementById("calendar").style.display = calendarDisplay;
+    document.getElementById("myPlot").style.display = chartDisplay;
+    
+    //generate random sentence and whole screen
+    let success = false;
+    while (!success)
+        success = await getRandomSentence();
+}
+
+async function getRandomSentence() {
+    try {
+        const response = await fetch('sentences.txt')
+        if (!response.ok) {
+            console.error('Failed to load the file');
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const text = await response.text();
+
+        const sentences = text.split('\n').map(sentence => sentence.trim()).filter(sentence => sentence !== '');
+        let randomSentence = "";
+        while (true){
+            const randomIndex = mode == "daily" ? getSeededRandom(sentences.length) : getRandomInt(sentences.length);
+            randomSentence = sentences[randomIndex];
+            let count = getPunctuationCount(randomSentence);
+            if (isValidPunctuationCountForLevel(count))
+                break;
+        }
+
+        //pass the random sentence to the next method
+        console.log(randomSentence);
+        originalText = randomSentence;
+    } catch (error) {
+        console.error(error.message);
+        return true;
+    }
+    
+    //originalText = "the man-walked to school"
+    if (!removePunctuation(originalText)){
+        console.log("Incorrect punctuationCount for level");
+        return false;
+    }
+
+    makeGuessBoxes();
+    createGrid();
+    generateKeyboard(); 
+    getCorrectAnswer();
+    alignButtons();
+
+    return true;
+}
+
+function getPunctuationCount(sentence){
+    let count = 0;
+    for (let c of sentence){
+        if (punctuation.includes(c))
+            ++count;
+    }
+    return count;
 }
 
 
@@ -125,27 +336,30 @@ function adjustFontSize() {
         dropBox.style.height = `${newFontSize * 1.5}vw`;
 
         dropBoxWidth = dropBox.style.width;
-        dropBoxHeight = dropBox.style.height;
-        
-
+        dropBoxHeight = dropBox.style.height;      
     });
 }
 
 
 //making the guess boxes
 function makeGuessBoxes() {
-    for (let rows = 0; rows < 6; rows++) {
+    grid.innerHTML = "";
+    let counter = 0;
+    for (let rows = 0; rows < MAX_GUESSES; rows++) {
         for (let col = 0; col < wordLength; col++) {
             const box = document.createElement('div');
             box.classList.add('box');
             grid.appendChild(box);
+            ++counter;
         }
-
     }
+    console.log(`Created ${counter} boxes in ${MAX_GUESSES} rows for wordLength ${wordLength}`);
 }
 
 //generating the punctuation keyboard
 function generateKeyboard() {
+    keyboard.innerHTML = "";
+
     punctuation.forEach(p => {
         const key = document.createElement('button');
         key.textContent = p;
@@ -221,38 +435,39 @@ function generateKeyboard() {
 //30 grid rows
 function createGrid() {
     const gridRows = document.querySelectorAll('.box');
+    console.log("createGrid box count: ", gridRows.length);
 
-    //updated = [];
+    lastBoxes = [];
 
     for (let m = 1; m < gridRows.length+1; m++) {
         if ((m % (wordLength) == 0) && m != 0) {
             //last one keep it
-            updated.push(gridRows[m-1]);
-            console.log("updated pushed");
+            lastBoxes.push(gridRows[m-1]);
         }
     }
 }
 
-
 //Loop through each row and align the buttons vertically
 function alignButtons() {
-    console.log(updated);
-    updated.forEach((row, index) => {
+    lastBoxes.forEach((row, index) => {        
         const button = viewSentenceButtons[index];
+        
         const rect = row.getBoundingClientRect();
-        const centerTop = rect.top + rect.height / 2;
-        const vhTop = (centerTop / window.innerHeight) * 100;
-
-        button.style.top = `${vhTop}vh`;
-        button.style.left = '50%';
-        button.style.transform = 'translate(-20%, -380%)';
-
-        console.log("this ran");
+        button.style.top = `${rect.top + 20}px`;
+        button.style.left = `${rect.right + 10}px`;
     });
-
-
 }
 
+function isValidPunctuationCountForLevel(punctuationCount){
+    if (level === 'easy' && punctuationCount != 3) {
+        return false;
+    } else if (level === 'medium' && punctuationCount != 4) {
+        return false;
+    } else if (level === 'hard' && punctuationCount < 5) {
+        return false;
+    }
+    return true;
+}
 
 //removing the punctuation from the sentence
 function removePunctuation(text) {
@@ -270,30 +485,10 @@ function removePunctuation(text) {
         punctuationCount++;
         return '';
     });
-
-    //checking to see if it's enough punctuation
-    let removeCount;
-
-    if (level === 'easy') {
-        removeCount = 3;
-    } else if (level === 'medium') {
-        removeCount = 4;
-    } else if (level === 'hard') {
-        if (punctuationCount >= 5) {
-            removeCount = punctuationCount; // Remove all
-        } else {
-            console.log("Not enough punctuation for hard");
-            getRandomSentence();
-            return;
-        }
-    }
     
-    if (punctuationCount < removeCount) {
-        console.log("Not enough punctuation to remove");
-        getRandomSentence();
-        return;
-    }
-
+    if (!isValidPunctuationCountForLevel(punctuationCount))
+        return false;
+    
     //removing the specific number of punctuation
     // const indicesToRemove = new Set();
     // while (indicesToRemove.size < removeCount) {
@@ -310,22 +505,20 @@ function removePunctuation(text) {
     //     }
     // }
 
-    wordLength = removeCount;
+    wordLength = punctuationCount;
     cleanedSentence = newSentence;
     
     renderSentenceWithDropBoxes(cleanedSentence);
 
+    console.log("gridTemplateColumns: ", punctuationCount);
     document.getElementById("grid").style.gridTemplateColumns = `repeat(${punctuationCount}, 5vw)`;
 
-
-    return { cleanedSentence, punctuationCount };
-
-
-    //return { newSentence, punctuationCount };
+    return true;
+    // return { cleanedSentence, punctuationCount };
 }
 
 function getCorrectAnswer() {
-    const punctuationRegex = /[.,!?;:'"\-\(\)\*]/;
+    const punctuationRegex = /[.,!?;:\-]/;
     
     correctPunctuation = [];
     let buffer = '';
@@ -353,12 +546,8 @@ function getCorrectAnswer() {
         correctPunctuation.push({ word: buffer, punctuation: '' });
     }
 
-    console.log("correct answer");
-    console.log(correctPunctuation);
+    console.log("correct answer: ", correctPunctuation);
 }
-
-
-
 
 //adding dropboxes
 function renderSentenceWithDropBoxes(text) {
@@ -460,10 +649,7 @@ function renderSentenceWithDropBoxes(text) {
                     enableDropBoxes();
                 }
             }
-        });
-        
-        
-        
+        });           
 
         //touch screen
         dropBox.addEventListener('touchstart', (e) => {
@@ -604,6 +790,7 @@ function createUserArray() {
 
 //changing the colors based on correct or not
 function comparePunctuation() {
+    console.log("comparePunctuation: " + gameOver);
     if (!gameOver) {
         if (punctuationCount == wordLength) {
             if (!submitted && currentlyViewing == -1) {
@@ -673,8 +860,7 @@ function comparePunctuation() {
                     const userPunctuation = userPunctuationList[index];
                     const correctPunctuation = correctPunctuationList[index];
 
-                    console.log(userPunctuation);
-                    console.log(correctPunctuation);
+                    console.log("User punct: ", userPunctuation, ". Correct punct: ", correctPunctuation);
                     if (userPunctuation === correctPunctuation) {
                         dropBox.style.backgroundColor = 'green';
                         colors.push('green');
@@ -804,11 +990,6 @@ function comparePunctuation() {
         }
     }
 }
-
-
-
-//when the user clicks enter change the color
-document.getElementById('enter-button').addEventListener('click', comparePunctuation);
 
 
 //reseting all data for next guess
@@ -959,9 +1140,6 @@ buttons.forEach(button => {
                     if (index == fullPunctuationIndexes[id][i]) {
                         //the drop box matches the location of the punctuation
                         dropBox.textContent = guesses[id][i];
-
-                        console.log(guesses[id][i]);
-                        console.log(fullColors[id]);
                         dropBox.style.backgroundColor = fullColors[id][i];
 
                         didItRun = true;
@@ -979,9 +1157,7 @@ buttons.forEach(button => {
                 }
                 
 
-            });
-
-            
+            });            
         } else {
             document.getElementById(id).style.backgroundColor = 'rgb(105, 102, 102)';
 
@@ -996,8 +1172,8 @@ buttons.forEach(button => {
                 //reverting it back to what it was
                 if (!gameOver) {
                     dropBox.textContent = currentSentencePunctuation[index];
-                    dropBox.style.backgroundColor = 'white';
-                    //dropBox.style.backgroundColor = currentColors[index];
+                    //dropBox.style.backgroundColor = 'white';
+                    dropBox.style.backgroundColor = currentColors[index];
                 } else {
                     //game is over
                     dropBox.textContent = '';
@@ -1006,7 +1182,6 @@ buttons.forEach(button => {
                 }
 
             });
-
 
             currentSentencePunctuation = [];
             currentColors = [];
@@ -1020,6 +1195,7 @@ buttons.forEach(button => {
 
 
 function showToast(message) {
+    console.log("Toast: " + message);
     const toast = document.getElementById("toast");
     toast.textContent = message;
     toast.classList.add("show");
@@ -1031,12 +1207,41 @@ function showToast(message) {
 }
 
 
-function endGame(winner) {
-    console.log(winner);
+function endGame(winner) {    
+    console.log("Game over", winner, currentGuess);
+    updateStats(winner, currentGuess);
+
     document.getElementById('nextGuess').disabled = true;
-    console.log(document.getElementById('nextGuess').disabled);
-
-
     disableKeyboard();
     disableDropBoxes();
+}
+
+function updateStats(won, numGuesses){
+    if (won){
+        incrementLocalStorage(mode + ":win:" + numGuesses);
+        incrementLocalStorage(mode + ":win");
+        if (mode == "daily"){
+            localStorage.setItem("d:" + getDailyChallangeDate(), 1);
+            setupCalendar();
+        }
+    } else {
+        incrementLocalStorage(mode + ":loss");
+        if (mode == "daily"){
+            localStorage.setItem("d:" + getDailyChallangeDate(), 0);
+            setupCalendar();
+        }
+    }
+}
+
+function incrementLocalStorage(key){
+    let value = getFromLocalStorage(key);
+    localStorage.setItem(key, value + 1);
+
+     //localStorage.setItem('user', JSON.stringify(userArray));
+    //const userData = JSON.parse(localStorage.getItem('user'));
+}
+
+function getFromLocalStorage(key){
+    let value = localStorage.getItem(key);
+    return value === null ? 0 : Number(value);
 }

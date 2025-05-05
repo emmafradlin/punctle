@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punctuation Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css" rel="stylesheet">    
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Punctle Home</a>
+        <a href="?mode=daily">Daily Challenge</a>
+        <a href="?mode=easy">Easy</a>
+        <a href="?mode=medium">Medium</a>
+        <a href="?mode=hard">Hard</a>
+    </div>
+    <div id = "menu">
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <button id = "statsbtn" class="openbtn" onclick="openStats()">&#128202;</button>
+    </div>
+
+    <div id="overlay">
+        <div class="flex">          
+            <button class="btn-close" onclick="closeStats()">⨉</button>
+        </div>
+        <div id="stats">
+            <div id="stats_totals">Played Win%</div>
+            <div id="calendar"></div>
+            <div id="myPlot"></div>
+        </div>
+
+    </div>
+
+    <div id="game-wrapper">
+        <div id = "controls">
+            <div id="sentence"></div>                     
+        </div>
+
+        <div id = "results">
+            <div id="grid"></div>
+            <div id = "seeSentence">
+                <button class = "viewSentence" id="see1" disabled>See in sentence</button>
+                <button class = "viewSentence" id="see2" disabled>See in sentence</button>
+                <button class = "viewSentence" id="see3" disabled>See in sentence</button>
+                <button class = "viewSentence" id="see4" disabled>See in sentence</button>
+                <button class = "viewSentence" id="see5" disabled>See in sentence</button>
+                <button class = "viewSentence" id="see6" disabled>See in sentence</button>
+            </div> 
+            <div class="btn-group">
+                <button id="enter-button" class="button">Check Guess</button>
+                <button id="nextGuess" class="button">Next Guess</button>
+                <button id="nextGame" class="button">Next Round</button>
+            </div>                  
+        </div>     
+        <div id="keyboard"></div>
+    </div>            
+
+    <div id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js"></script>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" charset="utf-8"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -18,6 +18,7 @@ body {
     overflow: hidden;
     padding: 2vh 2vw;
     box-sizing: border-box;
+    margin-top: -5em;
 }
 
 #sentence {
@@ -57,20 +58,18 @@ body {
     font-weight: bold;
 }
 
-
-
 #grid {
     display: grid;
     grid-template-columns: repeat(5, 5vw);
-    grid-template-rows: repeat(6, 10.5vh);
+    grid-template-rows: repeat(6, 8.5vh);
     gap: 1vw;
     margin-bottom: 3vh;
     justify-content: center;
 }
 
 .box {
-    width: 5vw;
-    height: 10.5vh;
+    width: 4vw;
+    height: 8vh;
     text-align: center;
     font-size: 4vw;
     border: 0.2vw solid #ccc;
@@ -80,6 +79,35 @@ body {
     align-items: center;
 }
 
+#seeSentence {
+}
+ 
+.viewSentence {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(105, 102, 102);
+    font-size: 2vh;
+    padding: 0.5vh 1vw;
+    cursor: pointer;
+    border-radius: 0.5vh;
+    border: none;
+    height: 4vh;
+    width: 10vw;    
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    /*will-change: transform;
+    transform: translateY(-10vh);
+    transform: translate(-50%, -50%);*/    
+}
+
+button:disabled {
+    background-color: lightgray;
+    border-color: lightgray;
+    cursor: not-allowed;
+}
 
 
 #keyboard {
@@ -123,53 +151,11 @@ body {
     margin: 0 auto;
 }
 
-#enter-button, #nextGuess, #nextGame {
+#enter-button, #nextGuess, #nextGame, #level {
     display: flex;
     margin-top: 5vh;
     gap: 8vh;
     width: 4vw;
-}
-
-
-
-#seeSentence {
-    position: relative;
-    display: grid;
-    grid-template-rows: repeat(6, 10.5vh);
-    align-items: center;
-    justify-items: center;
-    gap: 1vh;
-    display: inline-block;
-}
-
-  
-.viewSentence {
-    position: absolute;
-    text-align: center;
-    font-weight: bold;
-    color: black;
-    background-color: rgb(105, 102, 102);
-    font-size: 2vh;
-    padding: 0.5vh 1vw;
-    cursor: pointer;
-    border-radius: 0.5vh;
-    border: none;
-    height: 4vh;
-    width: 10vw;
-    will-change: transform;
-    transform: translateY(-10vh);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-
-}
-
-
-button:disabled {
-    background-color: lightgray;
-    border-color: lightgray;
-    cursor: not-allowed;
 }
 
 @keyframes shake {
@@ -213,7 +199,6 @@ button:disabled {
     top: 7vh;
 }  
 
-
 .dragging-punctuation {
     width: 3vw;
     height: 4vw;
@@ -226,3 +211,117 @@ button:disabled {
     justify-content: center;
     align-items: center;
 }
+
+#stats, #myPlot {
+    display: block;    
+}
+
+#stats, #myPlot {
+    width: 400px;
+}
+
+#stats_totals{
+    background-color: black;
+    font-size: 20px;
+    color: white;
+    height: 2em;
+    padding-top: 10px;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+    height: 250px; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+  
+  /* The sidepanel links */
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 5px 10px;
+    border: none;     
+    margin: 5px;   
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+
+  #statsbtn {
+    font-size: 40px;  
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+  }
+
+  #menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+  }
+
+  .btn-group .button {
+    background-color: #04AA6D; /* Green */
+    border: 1px solid green;
+    color: white;
+    padding: 10px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    transform: translateX(8em);
+  }
+  
+.btn-group .button:hover {
+    background-color: #3e8e41;
+  }
+
+  #overlay {
+    position: fixed;
+    display: none;
+    top: 5%;
+    left: 5%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 20;
+    cursor: pointer;
+  }
+  
