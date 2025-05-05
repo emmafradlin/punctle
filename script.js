@@ -1214,6 +1214,8 @@ function endGame(winner) {
     document.getElementById('nextGuess').disabled = true;
     disableKeyboard();
     disableDropBoxes();
+
+    openStats();
 }
 
 function updateStats(won, numGuesses){
