@@ -1,7 +1,3 @@
-//dashes work
-//shaking doesnt work
-//parethenses and quation marks have been removed
-//when you click see in sentence while viewing a guess that you just entered it messes everything up (colors)
 
 //possible punctuation
 const punctuation = ['.', ',', '?', '!', ';', ':', '-'];
@@ -197,9 +193,9 @@ function setupTotals(){
     document.getElementById("stats_totals").innerHTML = `Played: ${played}; Win%: ${win_pct}`;
 }
 
-/* Set the width of the sidebar to 250px (show it) */
+/* Set the width of the sidebar to 20vh (show it) */
 function openNav() {
-    document.getElementById("mySidepanel").style.width = "250px";
+    document.getElementById("mySidepanel").style.width = "20vw";
 }
   
 /* Set the width of the sidebar to 0 (hide it) */
@@ -220,6 +216,7 @@ function getUrlParam(param){
 }
 
 function resetVariables(){
+    console.log("resetting variables");
     gameOver = false;
 
     currentlyViewing = -1;
@@ -268,13 +265,13 @@ async function newGame() {
         let date = getDailyChallangeDate();
         seededRandom = RNG(new Date(date).getTime());
         let levelIndex = getSeededRandom(3);
-        console.log("Daily challange level index: ", levelIndex);
+        //console.log("Daily challange level index: ", levelIndex);
         level = ["easy", "medium", "hard"][levelIndex];
         calendarDisplay = "block";
         chartDisplay = "none";
         setupCalendar();
         document.getElementById('nextGame').style.display = "none";        
-        console.log(`Starting daily challange for ${date} game with level ${level}`);
+        //console.log(`Starting daily challange for ${date} game with level ${level}`);
         modeText = "Daily Challenge for " + date;
     } else {
         level = mode;
@@ -301,7 +298,7 @@ async function newGame() {
 
 async function getRandomSentence() {
     try {
-        const response = await fetch('sentences.txt')
+        const response = await fetch('/txtfiles/sentences.txt')
         if (!response.ok) {
             console.error('Failed to load the file');
             throw new Error(`Response status: ${response.status}`);
@@ -320,16 +317,15 @@ async function getRandomSentence() {
         }
 
         //pass the random sentence to the next method
-        console.log(randomSentence);
+        //console.log(randomSentence);
         originalText = randomSentence;
     } catch (error) {
-        console.error(error.message);
         return true;
     }
     
     //originalText = "the man-walked to school"
     if (!removePunctuation(originalText)){
-        console.log("Incorrect punctuationCount for level");
+        //console.log("Incorrect punctuationCount for level");
         return false;
     }
 
@@ -393,7 +389,7 @@ function makeGuessBoxes() {
             ++counter;
         }
     }
-    console.log(`Created ${counter} boxes in ${MAX_GUESSES} rows for wordLength ${wordLength}`);
+    //console.log(`Created ${counter} boxes in ${MAX_GUESSES} rows for wordLength ${wordLength}`);
 }
 
 //generating the punctuation keyboard
@@ -411,12 +407,15 @@ function generateKeyboard() {
 
         //prevent drag for current guesses
         key.addEventListener('mousedown', (e) => {
+            key.style.cursor = "grabbing";
             if (currentlyViewing !== -1) {
                 showToast("Currently viewing a past guess");
                 e.preventDefault();
             }
         });
-
+key.addEventListener('mouseup', (e) => {
+            key.style.cursor = "grab";
+        });
         key.addEventListener('touchstart', (e) => {
             if (currentlyViewing !== -1) {
                 showToast("Currently viewing a past guess");
@@ -454,7 +453,7 @@ function generateKeyboard() {
 
         key.addEventListener('dragend', (e) => {
             const draggedButton = e.target;
-
+            key.style.cursor = "grab";
 
             draggedButton.style.width = '';
             draggedButton.style.height = '';
@@ -475,7 +474,7 @@ function generateKeyboard() {
 //30 grid rows
 function createGrid() {
     const gridRows = document.querySelectorAll('.box');
-    console.log("createGrid box count: ", gridRows.length);
+    //console.log("createGrid box count: ", gridRows.length);
 
     lastBoxes = [];
 
@@ -550,7 +549,7 @@ function removePunctuation(text) {
     
     renderSentenceWithDropBoxes(cleanedSentence);
 
-    console.log("gridTemplateColumns: ", punctuationCount);
+    //console.log("gridTemplateColumns: ", punctuationCount);
     document.getElementById("grid").style.gridTemplateColumns = `repeat(${punctuationCount}, 5vw)`;
 
     return true;
@@ -586,7 +585,7 @@ function getCorrectAnswer() {
         correctPunctuation.push({ word: buffer, punctuation: '' });
     }
 
-    console.log("correct answer: ", correctPunctuation);
+    //console.log("correct answer: ", correctPunctuation);
 }
 
 //adding dropboxes
@@ -830,7 +829,7 @@ function createUserArray() {
 
 //changing the colors based on correct or not
 function comparePunctuation() {
-    console.log("comparePunctuation: " + gameOver);
+    //console.log("comparePunctuation: " + gameOver);
     if (!gameOver) {
         if (punctuationCount == wordLength) {
             if (!submitted && currentlyViewing == -1) {
@@ -889,8 +888,8 @@ function comparePunctuation() {
                 //const dropBoxColors = [];
                 const correctPunctuationCopy = correctPunctuationList;
 
-                console.log(correctPunctuationList);
-                console.log(userPunctuationList);
+                // console.log(correctPunctuationList);
+                // console.log(userPunctuationList);
 
                 //green
                 dropBoxIndices.forEach((index, i) => {
@@ -1095,6 +1094,8 @@ function enableSeeGuessButtons(index) {
 //event listeners for the see in sentence buttons
 viewSentenceButtons.forEach(button => {
     button.addEventListener('click', function(event) {
+        
+        //if (button.state)
         const dropBoxElements = document.querySelectorAll('.drop-box');
 
         let id = event.target.id;
@@ -1204,7 +1205,7 @@ viewSentenceButtons.forEach(button => {
 
 
 function showToast(message) {
-    console.log("Toast: " + message);
+    //console.log("Toast: " + message);
     const toast = document.getElementById("toast");
     toast.textContent = message;
     toast.classList.add("show");
@@ -1217,7 +1218,7 @@ function showToast(message) {
 
 
 function endGame(winner) {    
-    console.log("Game over", winner, currentGuess);
+    //console.log("Game over", winner, currentGuess);
     updateStats(winner, currentGuess);
 
     document.getElementById('nextGuess').disabled = true;
@@ -1258,3 +1259,43 @@ function getFromLocalStorage(key){
     let value = localStorage.getItem(key);
     return value === null ? 0 : Number(value);
 }
+
+
+
+/*
+
+function dragElement(elmnt) {
+  let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  elmnt.onmousedown = function (e) {
+    e.preventDefault();
+    pos3 = e.clientX; pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = dragMouseMove;
+    elmnt.style.cursor = "grabbing";
+  }
+
+  function dragMouseMove(e) {
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = document.onmousemove = null;
+elmnt.style.cursor = "grab";
+    }
+  }
+  dragElement(document.getElementById("overlay1"))
+  dragElement(document.getElementById("overlay2"));
+
+
+*/
+ 
+ 
+ 
+ 
+ 
