@@ -221,11 +221,12 @@ button[state="highlight"] {
 }
 
 #stats_totals{
-    background-color: black;
+    background-color: lightblue;
     font-size: 20px;
-    color: white;
+    color: black;
     height: 2em;
     padding-top: 10px;
+    text-align: center;
 }
 
 /* The sidepanel menu */
@@ -288,6 +289,12 @@ button[state="highlight"] {
     background-color: white;
   }
 
+  #infobtn {
+    font-size: 40px;  
+    padding: 0px;
+    margin: 5px;
+  }
+
   #menu {
     position: fixed;
     top: 0;
@@ -319,13 +326,13 @@ button[state="highlight"] {
     color: blue;
   }
 
-  #overlay {
+  .overlay {
+    border: 5px solid blue;
     position: fixed;
     display: none;
-    top: 5%;
-    left: 5%;
-    right: 0;
-    bottom: 0;
+    top: 20%;
+    left: 40%;
+
     background-color: rgba(255,255,255,0.5);
     z-index: 20;
     cursor: pointer;

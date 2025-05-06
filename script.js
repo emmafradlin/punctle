@@ -98,11 +98,11 @@ function getRandomInt(max) {
 newGame();
 
 function openStats() {
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay1").style.display = "block";
 }
 
 function closeStats() {
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById("overlay1").style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
