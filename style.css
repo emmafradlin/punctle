@@ -313,9 +313,10 @@ button[state="highlight"] {
     background-color: #3e8e41;
   }
 
-  .btn-group div {
+  .btn-group div {    
     transform: translateX(8em);
     font-weight: bold;
+    color: blue;
   }
 
   #overlay {
