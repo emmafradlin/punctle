@@ -253,7 +253,7 @@ function resetSeeInSentence(){
     for (let i = 1; i < 7; i++){
         const button = document.getElementById("see" + i);
         button.textContent = "See in sentence";
-        button.setAttribute("disabled", true);                
+        button.setAttribute("state", "disabled");
     }
 }
 
@@ -1057,7 +1057,7 @@ document.getElementById("nextGuess").addEventListener('click', () => {
         for (let j = 1; j <= 6; j++) {
             if (document.getElementById("see" + j).textContent == "Hide sentence") {
                 document.getElementById("see" + j).textContent = "See in sentence";
-                //document.getElementById("see" + j).style.backgroundColor = 'rgb(105, 102, 102)';
+                //document.getElementById("see" + j).setAttribute("state", "active");
             }
         }
 
@@ -1083,18 +1083,16 @@ document.getElementById("nextGuess").addEventListener('click', () => {
 //enabling each button after enter is clicked
 function enableSeeGuessButtons(index) {
     const button = document.getElementById("see" + index);
-    button.removeAttribute('disabled');
-    button.style.cursor = "allowed";
+    button.setAttribute("state", "active");
 
     if (gameOver) {
         document.getElementById("see" + index).textContent = "Hide sentence";
-        document.getElementById("see" + index).style.backgroundColor = 'red';
+        document.getElementById("see" + index).setAttribute("state", "highlight");
     }
 }
 
 
 //event listeners for the see in sentence buttons
-//todo:
 viewSentenceButtons.forEach(button => {
     button.addEventListener('click', function(event) {
         const dropBoxElements = document.querySelectorAll('.drop-box');
@@ -1102,7 +1100,8 @@ viewSentenceButtons.forEach(button => {
         let id = event.target.id;
     
         if (document.getElementById(id).textContent === "See in sentence") {
-            document.getElementById(id).style.backgroundColor = 'red';
+            document.getElementById(id).setAttribute("state", "highlight");
+            //document.getElementById(id).style.backgroundColor = 'red';
 
             currentlyViewing = id.substring(3);
 
@@ -1113,8 +1112,7 @@ viewSentenceButtons.forEach(button => {
             for (let j = 1; j <= 6; j++) {
                 if (document.getElementById("see" + j).textContent == "Hide sentence") {
                     document.getElementById("see" + j).textContent = "See in sentence";
-                    document.getElementById("see" + j).style.backgroundColor = 'rgb(105, 102, 102)';
-
+                    document.getElementById("see" + j).setAttribute("state", "active")                    
                     ran = true;
                 }
             }
@@ -1168,14 +1166,13 @@ viewSentenceButtons.forEach(button => {
                             
                             dropBox.textContent = '';
                             dropBox.style.backgroundColor = 'white';
-
                         }
                     }
                 }                
-
             });            
         } else {
-            document.getElementById(id).style.backgroundColor = 'rgb(105, 102, 102)';
+            document.getElementById(id).setAttribute("state", "active");
+            //document.getElementById(id).style.backgroundColor = 'rgb(105, 102, 102)';
 
             //enable the keyboard
             enableKeyboard();
