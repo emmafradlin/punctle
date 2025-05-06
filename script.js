@@ -29,17 +29,13 @@ let currentSentencePunctuation = [];
 let currentColors = [];
 
 let nextGuessPressed = false;
-
 let currentGuess = 0;
-
 let submitted = false;
 
 //array that in the end will have a length of five and store each user guess
 let guesses = [];
-
 let punctuationInBoxes = [];
 let dropBoxPunctuation = [];
-
 let fullPunctuationIndexes = [];
 let punctuationIndexes = [];
 
@@ -91,7 +87,6 @@ function formatDate(d){
 }
 
 let seededRandom;
-
 function getSeededRandom(max){
     return Math.floor(Math.abs(seededRandom()) * max);
 }
@@ -224,10 +219,51 @@ function getUrlParam(param){
     return urlParams.get(param);
 }
 
-async function newGame() {    
+function resetVariables(){
+    gameOver = false;
+
+    currentlyViewing = -1;
+    punctuationCount = 0;
+    currentGuess = 0;
+
+    currentSentencePunctuation = [];
+    currentColors = [];
+
+    nextGuessPressed = false;
+    submitted = false;
+
+    guesses = [];
+    punctuationInBoxes = [];
+    dropBoxPunctuation = [];
+    fullPunctuationIndexes = [];
+    punctuationIndexes = [];
+
+    colors = [];
+    fullColors = [];
+
+    correctPunctuation = [];
+    userPunctuation = [];
+
+    lastBoxes = [];
+
+    resetSeeInSentence();
+}
+
+function resetSeeInSentence(){
+    for (let i = 1; i < 7; i++){
+        const button = document.getElementById("see" + i);
+        button.textContent = "See in sentence";
+        button.setAttribute("disabled", true);                
+    }
+}
+
+async function newGame() {   
+    resetVariables(); 
     mode = getUrlParam('mode');        
     let calendarDisplay = "none";
-    let chartDisplay = "none"
+    let chartDisplay = "none";
+    let modeText = "";
+
     if (mode == "daily"){
         let date = getDailyChallangeDate();
         seededRandom = RNG(new Date(date).getTime());
@@ -237,8 +273,9 @@ async function newGame() {
         calendarDisplay = "block";
         chartDisplay = "none";
         setupCalendar();
-        document.getElementById('nextGame').style.display = "none";
+        document.getElementById('nextGame').style.display = "none";        
         console.log(`Starting daily challange for ${date} game with level ${level}`);
+        modeText = "Daily Challenge for " + date;
     } else {
         level = mode;
         calendarDisplay = "none";
@@ -248,6 +285,9 @@ async function newGame() {
         document.getElementById('nextGame').style.display = "block";
         console.log("Starting new game with level: " + level);
     }
+    
+    modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
+    document.getElementById("mode").innerHTML = modeText;
 
     setupTotals();
     document.getElementById("calendar").style.display = calendarDisplay;
@@ -877,7 +917,6 @@ function comparePunctuation() {
 
                     const dropBox = dropBoxElements[index];
 
-                    console.log("style" + dropBox.style.background);
                     //don't run if green
                     if (dropBox.style.backgroundColor == "green") {
                         return;
@@ -886,8 +925,6 @@ function comparePunctuation() {
                     const userPunctuation = userPunctuationList[index];
 
                     if (userPunctuation && correctPunctuationCopy.includes(userPunctuation)) {
-                        console.log("yellow");
-
                         dropBox.style.backgroundColor = 'yellow';
                         colors.push('yellow');
 
@@ -896,8 +933,6 @@ function comparePunctuation() {
 
                         //fullColors[currentGuess][index] = 'yellow';
                     } else {
-                        console.log("gray");
-
                         dropBox.style.backgroundColor = 'gray';
                         colors.push('gray');
 
@@ -921,10 +956,6 @@ function comparePunctuation() {
                 guesses.push(currentGuessArray);
                 fullPunctuationIndexes.push(punctuationIndexes);
 
-                console.log("colors: ");
-                console.log(colors);
-
-        
                 fullColors.push(colors);
 
                 let count = 0;
@@ -965,8 +996,6 @@ function comparePunctuation() {
             if (gameOver) {
                 enableSeeGuessButtons(currentGuess);
             }
-
-
         } else {
 
             //not enough punctuation so shake the boxes
@@ -990,7 +1019,6 @@ function comparePunctuation() {
         }
     }
 }
-
 
 //reseting all data for next guess
 function resetData() {
@@ -1020,7 +1048,6 @@ function resetData() {
     colors = [];
 
     userPunctuation = [];
-
 }
 
 //going to the next guess
@@ -1067,9 +1094,8 @@ function enableSeeGuessButtons(index) {
 
 
 //event listeners for the see in sentence buttons
-const buttons = document.querySelectorAll('.viewSentence');
-
-buttons.forEach(button => {
+//todo:
+viewSentenceButtons.forEach(button => {
     button.addEventListener('click', function(event) {
         const dropBoxElements = document.querySelectorAll('.drop-box');
 
@@ -1077,7 +1103,6 @@ buttons.forEach(button => {
     
         if (document.getElementById(id).textContent === "See in sentence") {
             document.getElementById(id).style.backgroundColor = 'red';
-
 
             currentlyViewing = id.substring(3);
 
@@ -1090,19 +1115,15 @@ buttons.forEach(button => {
                     document.getElementById("see" + j).textContent = "See in sentence";
                     document.getElementById("see" + j).style.backgroundColor = 'rgb(105, 102, 102)';
 
-
                     ran = true;
                 }
-
             }
 
             if (ran) {
                 dropBoxElements.forEach((dropBox, index) => {
-                    //reverting it back to what it was
-                    
+                    //reverting it back to what it was                   
                     dropBox.textContent = currentSentencePunctuation[index];
-                    dropBox.style.backgroundColor = 'currentColors[index]';
-    
+                    dropBox.style.backgroundColor = currentColors[index];
                 });
 
                 currentSentencePunctuation = [];
@@ -1115,19 +1136,16 @@ buttons.forEach(button => {
 
             //before making it appear get the current
             //getting the current color also
-            dropBoxElements.forEach((dropBox) => {
-                
+            dropBoxElements.forEach((dropBox) => {               
                 currentSentencePunctuation.push(dropBox.textContent);
                 currentColors.push(window.getComputedStyle(dropBox).backgroundColor);
             });
 
-
             //make it appear
             document.getElementById(id).textContent = "Hide sentence";
             
-            id = id.substring(3) - 1;
-            
-            
+            let buttonIndex = id.substring(3) - 1;
+                        
             //if something is currently in there then the box content doesnt change
             
             //adding the punctuation to the sentence
@@ -1135,27 +1153,25 @@ buttons.forEach(button => {
             dropBoxElements.forEach((dropBox, index) => {
                 didItRun = false;
 
-                for (let i = 0; i < fullPunctuationIndexes[id].length; i++) {
-
-                    if (index == fullPunctuationIndexes[id][i]) {
+                for (let i = 0; i < fullPunctuationIndexes[buttonIndex].length; i++) {
+                    if (index == fullPunctuationIndexes[buttonIndex][i]) {
                         //the drop box matches the location of the punctuation
-                        dropBox.textContent = guesses[id][i];
-                        dropBox.style.backgroundColor = fullColors[id][i];
+                        dropBox.textContent = guesses[buttonIndex][i];
+                        dropBox.style.backgroundColor = fullColors[buttonIndex][i];
 
                         didItRun = true;
                         continue;
 
                     } else {
                         //last run through
-                        if (i == (fullPunctuationIndexes[id].length-1) && !didItRun) {
+                        if (i == (fullPunctuationIndexes[buttonIndex].length-1) && !didItRun) {
                             
                             dropBox.textContent = '';
                             dropBox.style.backgroundColor = 'white';
 
                         }
                     }
-                }
-                
+                }                
 
             });            
         } else {
@@ -1172,23 +1188,19 @@ buttons.forEach(button => {
                 //reverting it back to what it was
                 if (!gameOver) {
                     dropBox.textContent = currentSentencePunctuation[index];
-                    //dropBox.style.backgroundColor = 'white';
-                    dropBox.style.backgroundColor = currentColors[index];
+                    dropBox.style.backgroundColor = 'white';
+                    //dropBox.style.backgroundColor = currentColors[index];
                 } else {
                     //game is over
                     dropBox.textContent = '';
                     dropBox.style.backgroundColor = 'white';
-
                 }
-
             });
 
             currentSentencePunctuation = [];
             currentColors = [];
 
-            currentlyViewing = -1;
-            
-            
+            currentlyViewing = -1;            
         }
     });
 });
@@ -1222,17 +1234,19 @@ function updateStats(won, numGuesses){
     if (won){
         incrementLocalStorage(mode + ":win:" + numGuesses);
         incrementLocalStorage(mode + ":win");
-        if (mode == "daily"){
-            localStorage.setItem("d:" + getDailyChallangeDate(), 1);
-            setupCalendar();
-        }
+        if (mode == "daily")
+            localStorage.setItem("d:" + getDailyChallangeDate(), 1);                    
     } else {
         incrementLocalStorage(mode + ":loss");
-        if (mode == "daily"){
+        if (mode == "daily")
             localStorage.setItem("d:" + getDailyChallangeDate(), 0);
-            setupCalendar();
-        }
     }
+    
+    setupTotals();
+    if (mode == "daily")
+        setupCalendar();
+    else
+        setupChart();
 }
 
 function incrementLocalStorage(key){
