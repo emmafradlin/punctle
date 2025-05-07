@@ -163,7 +163,6 @@ function setupCalendar(){
 
 function setupChart(){
     const yArray = ["6", "5", "4", "3", "2", "1"];
-    //const xArray = [6, 5, 4, 3, 2, 1];
     const xArray = [];
 
     for (let y of yArray){
@@ -173,13 +172,24 @@ function setupChart(){
     const data = [{
         x:xArray,
         y:yArray.map(v => v + "-"),
-        text: xArray.map(Number),
+        text: xArray,
+        textposition: 'outside',
+        texttemplate: ' %{text}',
         type:"bar",
         orientation:"h",
-        marker: {color:"rgba(0,0,255,0.6)"}
+        marker: {
+            color:"blue",
+            line: {
+                color: 'blue',
+                width: 10
+            }
+        }
     }];
 
-    const layout = {margin: {l: 20, r: 0, b: 0, t: 20}};
+    const layout = {
+        margin: {l: 20, r: 0, b: 0, t: 20},
+        font: {size: 16}
+    };
 
     Plotly.newPlot("myPlot", data, layout, {staticPlot: true});
 }
@@ -190,7 +200,8 @@ function setupTotals(){
     let played = num_wins + num_losses;
     let win_pct = played > 0 ? Math.round(100*num_wins/played) : "";
 
-    document.getElementById("stats_totals").innerHTML = `Played: ${played}; Win%: ${win_pct}`;
+    document.getElementById("played").innerHTML = `${played}<br/>Played`;
+    document.getElementById("winpct").innerHTML = `${win_pct}<br/>Win%`;
 }
 
 /* Set the width of the sidebar to 20vh (show it) */
@@ -255,6 +266,7 @@ function resetSeeInSentence(){
 }
 
 async function newGame() {   
+    document.getElementById('nextGuess').disabled = false;
     resetVariables(); 
     mode = getUrlParam('mode');        
     let calendarDisplay = "none";
@@ -298,7 +310,7 @@ async function newGame() {
 
 async function getRandomSentence() {
     try {
-        const response = await fetch('/txtfiles/sentences.txt')
+        const response = await fetch('sentences.txt')
         if (!response.ok) {
             console.error('Failed to load the file');
             throw new Error(`Response status: ${response.status}`);
@@ -308,16 +320,24 @@ async function getRandomSentence() {
 
         const sentences = text.split('\n').map(sentence => sentence.trim()).filter(sentence => sentence !== '');
         let randomSentence = "";
+
         while (true){
             const randomIndex = mode == "daily" ? getSeededRandom(sentences.length) : getRandomInt(sentences.length);
-            randomSentence = sentences[randomIndex];
+            const sentenceDataStr = sentences[randomIndex];
+            const sentenceData = sentenceDataStr.split("|");
+
+            document.getElementById("author").innerText = sentenceData[0];
+            document.getElementById("title").innerText = sentenceData[1];
+            document.getElementById("info_img").setAttribute("src", sentenceData[2]);
+
+            randomSentence = sentenceData[3];
             let count = getPunctuationCount(randomSentence);
             if (isValidPunctuationCountForLevel(count))
                 break;
         }
 
         //pass the random sentence to the next method
-        //console.log(randomSentence);
+        console.log(randomSentence);
         originalText = randomSentence;
     } catch (error) {
         return true;

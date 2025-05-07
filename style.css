@@ -221,12 +221,19 @@ button[state="highlight"] {
 }
 
 #stats_totals{
+  display: flex;
   background-color: lightblue;
-  font-size: 2vw;
+  font-size: 1.2vw;
   color: black;
   height: 2em;
-  padding-top: 2vw;
-  text-align: center;
+  justify-content: center;
+  padding-top: 0.2vw;
+  padding-bottom: 0.5vw;
+}
+
+#stats_totals div {
+    padding-right: 1vw;
+    text-align: center;
 }
 
 /* The sidepanel menu */
@@ -270,11 +277,11 @@ button[state="highlight"] {
 
 /* Style the button that is used to open the sidepanel */
 .openbtn {
-  font-size: 3vw;
+  font-size: 2vw;
   cursor: pointer;
   background-color: #f9f9f9;
   color: black;
-  padding: 1vw 1vw;
+  padding-left: 0.2vw;
   border: none;     
   margin: 0vw;
 }
@@ -284,27 +291,19 @@ button[state="highlight"] {
 }
 
 #statsbtn {
-  font-size: 3vw;
+  font-size: 2vw;
   cursor: pointer;
   background-color: #f9f9f9;
   color: black;
-  padding: 1vw 1vw;
   border: none;     
   margin: 0vw;
 }
 
-#infobtn {
-  position: relative;
-  font-size: 3vw;
-  cursor: pointer;
-  background-color: #f9f9f9;
+#infobtn {  
+  font-size: 2vw;
   color: black;
-  padding: 1vw 1vw;
-  border: none;     
-  margin: 0vw;
-  max-height: 14vh;
-  top: 84vh;
-  left: 45vw;
+  transform: translateY(-2em);
+  width: 1em;
 }
 
 #menu {
@@ -338,16 +337,32 @@ button[state="highlight"] {
   color: blue;
 }
 
+.btn-close {
+    background-color: lightblue;    
+}
+
+.btn-close button {
+    font-size: 1.1vw;
+    padding: 0.1vw;
+}
+
 .overlay {
   border: 0.5vw solid black;
-  position: fixed;
   display: none;
-  top: 20%;
-  left: 40%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
   
   background-color: rgba(255,255,255,0.5);
   z-index: 20;
   cursor: grab;
 }    
   
-  
+#info {
+    display: block;
+    background-color: lightblue;
+    width: 20vw;
+    text-align: center;
+    font-size: 1.2vw;
+}

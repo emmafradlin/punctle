@@ -21,27 +21,30 @@
     <div id = "menu">
         <button class="openbtn" onclick="openNav()">&#9776;</button>
         <button id = "statsbtn" class="openbtn" onclick="openStats()">&#128202;</button>        
-    </div>
-
-    <button id = "infobtn" class="openbtn" onclick="document.getElementById('overlay2').style.display = 'block'">&#128712;</button>
+    </div>    
 
     <div id="overlay1" class="overlay">
-        <div class="flex">          
-            <button class="btn-close" onclick="closeStats()">⨉</button>
+        <div class="btn-close">          
+            <button class="btn-close" onclick="closeStats()">&#128473;</button>
         </div>
         <div id="stats">
-            <div id="stats_totals">Played Win%</div>
+            <div id="stats_totals">
+                <div id="played"></div>
+                <div id="winpct"></div>
+            </div>
             <div id="calendar"></div>
             <div id="myPlot"></div>
         </div>
     </div>
 
     <div id="overlay2" class="overlay">
-        <div class="flex">          
-            <button class="btn-close" onclick="document.getElementById('overlay2').style.display = 'none'">⨉</button>
+        <div class="btn-close">
+            <button  onclick="document.getElementById('overlay2').style.display = 'none'">&#128473;</button>
         </div>
-        <div id="info">
-            <img width="70vw" hight="70vh" src="https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg">
+        <div id="info">            
+            <div><span id="author"></span></div>
+            <div><span id="title"></span></div>
+            <div><img id="info_img" /></div>
         </div>
     </div>
 
@@ -67,7 +70,9 @@
                 <button id="nextGame" class="button">Next Round</button>                
             </div>                  
         </div>     
+        
         <div id="keyboard"></div>
+        <button id = "infobtn" class="openbtn" onclick="document.getElementById('overlay2').style.display = 'block'">&#128712;</button>        
     </div>            
 
     <div id="toast"></div>
