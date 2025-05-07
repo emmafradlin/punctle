@@ -1,7 +1,10 @@
 
 //possible punctuation
 const punctuation = ['.', ',', '?', '!', ';', ':', '-'];
-const MAX_GUESSES = 6
+const MAX_GUESSES = 6;
+
+const allSentences = {easy: [], medium: [], hard: []};
+const allBooks = new Map();
 
 const sentence = document.getElementById("sentence");
 let originalText = "the man";
@@ -268,7 +271,9 @@ function resetSeeInSentence(){
     }
 }
 
-async function newGame() {   
+async function newGame() {  
+    await downloadSentences();
+
     document.getElementById('nextGuess').disabled = false;
     resetVariables(); 
     mode = getUrlParam('mode');        
@@ -308,43 +313,77 @@ async function newGame() {
     //generate random sentence and whole screen
     let success = false;
     while (!success)
-        success = await getRandomSentence();
+        success = getRandomSentence();
 }
 
-async function getRandomSentence() {
+async function downloadSentences() {
+    if (allBooks.size > 0)
+        return;
+
     try {
         const response = await fetch('sentences.txt')
         if (!response.ok) {
-            console.error('Failed to load the file');
+            console.error('Failed to load the sentence file', response.status);
+            alert("Failed to load file with sentences");
             throw new Error(`Response status: ${response.status}`);
         }
 
         const text = await response.text();
 
         const sentences = text.split('\n').map(sentence => sentence.trim()).filter(sentence => sentence !== '');
-        let randomSentence = "";
-
-        while (true){
-            const randomIndex = mode == "daily" ? getSeededRandom(sentences.length) : getRandomInt(sentences.length);
-            const sentenceDataStr = sentences[randomIndex];
-            const sentenceData = sentenceDataStr.split("|");
-
-            document.getElementById("author").innerText = sentenceData[0];
-            document.getElementById("title").innerText = sentenceData[1];
-            document.getElementById("info_img").setAttribute("src", sentenceData[2]);
-
-            randomSentence = sentenceData[3];
-            let count = getPunctuationCount(randomSentence);
-            if (isValidPunctuationCountForLevel(count))
-                break;
+        for (const sentence of sentences) {
+            const fields = sentence.split('|');
+            if (fields.length == 4){
+                //book info
+                const book = {
+                    id: fields[0],
+                    author: fields[1],
+                    title: fields[2],
+                    image: fields[3]
+                };
+                allBooks.set(book.id, book);
+            } else {
+                //sentences
+                const sentence = {
+                    book_id: fields[0],
+                    level: fields[1],
+                    sentence: fields[2]
+                }
+                allSentences[sentence.level].push(sentence);
+            }
         }
 
-        //pass the random sentence to the next method
-        console.log(randomSentence);
-        originalText = randomSentence;
+        console.log(`Downloaded ${allBooks.size} books`);
+        console.log("Sentence counts (easy/medium/hard)", allSentences.easy.length, allSentences.medium.length, allSentences.hard.length);
     } catch (error) {
-        return true;
+        console.error('Failed to load the sentence file', error);
+        alert("Failed to load file with sentences");
+        throw new Error(`Failed to load sentence file: ${error}`);
     }
+}
+
+function getRandomSentence() {   
+    let randomSentence = "";
+
+    while (true){
+        const sentences = allSentences[level];
+        const randomIndex = mode == "daily" ? getSeededRandom(sentences.length) : getRandomInt(sentences.length);
+        const sentenceData = sentences[randomIndex];
+        const bookData = allBooks.get(sentenceData.book_id);
+
+        document.getElementById("author").innerText = bookData.author;
+        document.getElementById("title").innerText = bookData.title;
+        document.getElementById("info_img").setAttribute("src", bookData.image);
+
+        randomSentence = sentenceData.sentence;
+        let count = getPunctuationCount(randomSentence);
+        if (isValidPunctuationCountForLevel(count))
+            break;
+    }
+
+    //pass the random sentence to the next method
+    console.log(randomSentence);
+    originalText = randomSentence;
     
     //originalText = "the man-walked to school"
     if (!removePunctuation(originalText)){

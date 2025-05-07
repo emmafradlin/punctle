@@ -1,25 +1,780 @@
-F. Scott Fitzgerald|Great Gatsby|https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/250px-The_Great_Gatsby_Cover_1925_Retouched.jpg|and we've produced all the things that go to make civilization—oh, science and art and all that. Do you see?
-F. Scott Fitzgerald|Great Gatsby|https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/250px-The_Great_Gatsby_Cover_1925_Retouched.jpg|Gatsby, his hands still in his pockets, was reclining against the mantelpiece in a strained counterfeit of perfect ease, even of boredom.
-William Shakespeare|Hamlet|https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg/250px-William_Shakespeare_by_John_Taylor%2C_edited.jpg|This above all: To thine own self be true, And it must follow, as the night the day, Thou canst not then be false to any man.
-Anne Frank|The Diary of a Young Girl|https://upload.wikimedia.org/wikipedia/en/4/47/Het_Achterhuis_%28Diary_of_Anne_Frank%29_-_front_cover%2C_first_edition.jpg|I've found that there is always some beauty left — in nature, sunshine, freedom, in yourself; these can all help you.
-Jane Austen|Pride and Prejudice|https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/250px-PrideAndPrejudiceTitlePage.jpg|I declare after all there is no enjoyment like reading! How much sooner one tires of any thing than of a book! — When I have a house of my own, I shall be miserable if I have not an excellent library.
-Frank Herbert|Dune|https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Frank_Herbert_1984_%28square%29.jpg/250px-Frank_Herbert_1984_%28square%29.jpg|I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.
-J.R.R. Tolkien|The Hobbit|https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/TheHobbit_FirstEdition.jpg/250px-TheHobbit_FirstEdition.jpg|There is nothing like looking, if you want to find something. You certainly usually find something, if you look, but it is not always quite the something you were after.
-Stephen King|The Shining|https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/The_Shining_%281977%29_front_cover%2C_first_edition.jpg/250px-The_Shining_%281977%29_front_cover%2C_first_edition.jpg|Monsters are real, and ghosts are real too. They live inside us, and sometimes, they win.
-Ralph Waldo Emerson|Journals|https://en.wikipedia.org/wiki/File:Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg|The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.
-Percy Bysshe Shelley|Ozymandias|https://i0.wp.com/thinklit.co.uk/wp-content/uploads/2024/03/Ozymandias.jpg?resize=300%2C300&ssl=1|My name is Ozymandias, King of Kings; Look on my Works, ye Mighty, and despair!
-Neil Gaiman|The Sandman|https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Sandman_no.1_%28Modern_Age%29.comiccover.jpg/250px-Sandman_no.1_%28Modern_Age%29.comiccover.jpg|Sometimes you wake up. Sometimes the fall kills you. And sometimes, when you fall, you fly.
-J.R.R. Tolkien|The Hobbit|https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/TheHobbit_FirstEdition.jpg/250px-TheHobbit_FirstEdition.jpg|There is nothing like looking, if you want to find something. You certainly usually find something, if you look, but it is not always quite the something you were after.
-Angie Thomas|The Hate U Give|https://en.wikipedia.org/wiki/File:The_Hate_U_Give_poster.png|Brave doesn't mean you're not scared. It means you go on even though you're scared.
-Stephen King|On Writing: A Memoir of the Craft|https://stephenking.com/images/books/on_writing/hardcover_prop_embed.jpg|You can, you should, and if you're brave enough to start, you will.
-Tomi Adeyemi|Children Of Blood And Bone|https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Children_of_Blood_and_Bone.jpg/250px-Children_of_Blood_and_Bone.jpg|Reality told us we would fail. But again and again, we fought. We persevered. We rose.
-Ford Madox Ford|The Good Soldier|https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/The_Good_Soldier_First_Edition%2C_Ford_Madox_Ford.jpg/250px-The_Good_Soldier_First_Edition%2C_Ford_Madox_Ford.jpg|Six months ago I had never been to England, and, certainly, I had never sounded the depths of an English heart. I had known the shallows.
-Franz Kafka|Metamorphosis|https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Franz_Kafka_Die_Verwandlung_1916_Orig.-Pappband.jpg/250px-Franz_Kafka_Die_Verwandlung_1916_Orig.-Pappband.jpg|You must try to get rid of the idea that this is Gregor. The fact that we've believed it for so long is the root of all our trouble. But how can it be Gregor?
-Harper Lee|To Kill a Mockingbird|https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg/250px-To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg|Shoot all the bluejays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird.
-Sandra Cisneros|Eleven|https://ecdn.teacherspayteachers.com/cdn-cgi/image/format=avif,quality=70,onerror=redirect/thumbitem/Eleven-by-Sandra-Cisneros-A-Mini-Unit-1402375-1650301746/original-1402375-1.jpg|I even move my chair a little to the right. Not mine, not mine, not mine.
+pg64317|F. Scott Fitzgerald|The Great Gatsby|https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg
+pg2701|Herman Melville|Moby Dick; Or, The Whale|https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Moby-Dick_FE_title_page.jpg/500px-Moby-Dick_FE_title_page.jpg
+pg27761|William Shakespeare|Hamlet, Prince of Denmark|https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Edwin_Booth_Hamlet_1870.jpg/250px-Edwin_Booth_Hamlet_1870.jpg
+pg1513|William Shakespeare|Romeo and Juliet|https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Romeo_and_juliet_brown.jpg/250px-Romeo_and_juliet_brown.jpg
+0100021|George Orwell|Nineteen eighty-four|https://upload.wikimedia.org/wikipedia/commons/5/51/1984_first_edition_cover.jpg
+pg25344|Nathaniel Hawthorne|The Scarlet Letter|https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/The_Scarlet_Letter_title_page.jpg/250px-The_Scarlet_Letter_title_page.jpg
+pg1342|Jane Austen|Pride and Prejudice|https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg
+pg84|Mary Wollstonecraft Shelley|Frankenstein; Or, The Modern Prometheus|https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Christie%27s_auction_scan_of_Frankenstein_1818.jpg/250px-Christie%27s_auction_scan_of_Frankenstein_1818.jpg
+0100011|George Orwell|Animal Farm|https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Animal_Farm_-_1st_edition.jpg/250px-Animal_Farm_-_1st_edition.jpg
+pg76|Mark Twain|Adventures of Huckleberry Finn|https://www.gutenberg.org/cache/epub/76/pg76.cover.medium.jpg
+pg1260|Charlotte Brontë|Jane Eyre: An Autobiography|https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Jane_Eyre_title_page.jpg/250px-Jane_Eyre_title_page.jpg
+pg1533|William Shakespeare|Macbeth|https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/First-page-first-folio-macbeth.jpg/250px-First-page-first-folio-macbeth.jpg
+pg1400|Charles Dickens|Great Expectations|https://www.gutenberg.org/cache/epub/1400/pg1400.cover.medium.jpg
+pg1184|Alexandre Dumas|The Count of Monte Cristo|https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg
 
+0100011|medium|After the horses came Muriel, the white goat, and Benjamin, the donkey.
+0100011|medium|Let us face it: our lives are miserable, laborious, and short.
+0100011|easy|No, comrades, a thousand times no!
+0100011|easy|There, comrades, is the answer to all our problems.
+0100011|hard|To that horror we all must come-cows, pigs, hens, sheep, everyone.
+0100011|easy|That is my message to you, comrades: Rebellion!
+0100011|medium|They were gored, kicked, bitten, trampled on.
+0100011|hard|Windmill or no windmill, he said, life would go on as it had always gone on-that is, badly.
+0100011|easy|They were unnecessary, he said, and wasted time.
+0100011|easy|Some of the pigs themselves, however, were more articulate.
+0100011|easy|Do not imagine, comrades, that leadership is a pleasure!
+0100011|medium|The plans, however, had all been prepared, down to the last detail.
+0100011|medium|Why, then, asked somebody, had he spoken so strongly against it?
+0100011|easy|This, said Squealer, was something called tactics.
+0100011|easy|Even Boxer, who seldom asked questions, was puzzled.
+0100011|easy|When captured, he said, Frederick should be boiled alive.
+0100011|medium|A cow, three sheep, and two geese were killed, and nearly everyone was wounded.
+0100011|easy|There were more songs, more speeches, more processions.
+0100011|medium|Muriel was dead; Bluebell, Jessie, and Pincher were dead.
+0100011|medium|This, too, would be suppressed, and the skull had already been buried.
+0100011|medium|There were shoutings, bangings on the table, sharp suspicious glances, furious denials.
 
+0100021|medium|It was safer; though, as he well knew, even a back can be revealing.
+0100021|hard|The Ministry of Truth, which concerned itself with news, entertainment, education, and the fine arts.
+0100021|hard|Their names, in Newspeak: Minitrue, Minipax, Miniluv, and Miniplenty.
+0100021|easy|In small clumsy letters he wrote: April 4th, 1984.
+0100021|easy|That, it was true, was very unlikely.
+0100021|hard|All subsequent crimes against the Party, all treacheries, acts of sabotage, heresies, deviations, sprang directly out of his teaching.
+0100021|easy|You were abolished, annihilated: VAPORIZED was the usual word.
+0100021|easy|Newspeak, doublethink, the mutability of the past.
+0100021|hard|Asleep or awake, working or eating, indoors or out of doors, in the bath or in bed-no escape.
+0100021|easy|Such things, he saw, could not happen today.
+0100021|hard|Today there were fear, hatred, and pain, but no dignity of emotion, no deep or complex sorrows.
+0100021|medium|His mother, in her slow, dreamy way, was following a long way behind them.
+0100021|medium|Someone whom the old man loved-a little granddaughter, perhaps-had been killed.
+0100021|medium|The past, he reflected, had not merely been altered, it had been actually destroyed.
+0100021|easy|Withers, however, was already an UNPERSON.
+0100021|hard|And above all, at the end, the tongue sticking right out, and blue-a quite bright blue.
+0100021|medium|There was something that he lacked: discretion, aloofness, a sort of saving stupidity.
+0100021|medium|Goldstein himself, it was said, had sometimes been seen there, years and decades ago.
+0100021|easy|Parsons, on the other hand, would never be vaporized.
+0100021|medium|It was extraordinarily embarrassing, and, after a while, horrible.
+0100021|easy|The sexual act, successfully performed, was rebellion.
+0100021|hard|It was a peculiar, cracked, braying, jeering note: in his mind Winston called it a yellow note.
+0100021|easy|Today, probably, he would have kept that photograph.
+0100021|easy|They were still arguing, with vivid, passionate faces.
+0100021|medium|It was their delight, their folly, their anodyne, their intellectual stimulant.
+0100021|medium|You-the ordinary people, the workers-were their slaves.
+0100021|hard|Salvation Army, Roman Catholics, Jews, Indians-all sorts there was.
+0100021|easy|In 1925, for instance, you were already grown up.
+0100021|easy|Yes, he thought again, he would come back.
+0100021|hard|Banners, processions, slogans, games, community hikes all that stuff.
+0100021|easy|For whom, for what, was that bird singing?
+0100021|easy|Anything to rot, to weaken, to undermine!
+0100021|hard|The young, strong body, now helpless in sleep, awoke in him a pitying, protecting feeling.
+0100021|easy|It paid, she said, it was camouflage.
+0100021|hard|Folly, folly, his heart kept saying: conscious, gratuitous, suicidal folly.
+0100021|easy|Privacy, he said, was a very valuable thing.
+0100021|hard|He took it out of her hand, fascinated, as always, by the soft, rainwatery appearance of the glass.
+0100021|easy|Mr Charrington, thought Winston, was another extinct animal.
+0100021|hard|There was a long, nagging argument that went round and round, with shouts, whines, tears, remonstrances, bargainings.
+0100021|easy|Facts, at any rate, could not be kept hidden.
+0100021|medium|He was waiting, somewhat sternly, for Winston to speak, but about what?
+0100021|medium|Secondly, there is no longer, in a material sense, anything to fight about.
+0100021|hard|But this, too, entailed military weakness, and since the privations it inflicted were obviously unnecessary, it made opposition inevitable.
+0100021|easy|Efficiency, even military efficiency, is no longer needed.
+0100021|hard|After the revolutionary period of the fifties and sixties, society regrouped itself, as always, into High, Middle, and Low.
+0100021|easy|The second danger, also, is only a theoretical one.
+0100021|easy|The problem, that is to say, is educational.
+0100021|easy|CRIMESTOP, in short, means protective stupidity.
+0100021|hard|In general, the greater the understanding, the greater the delusion; the more intelligent, the less sane.
+0100021|medium|But it was so, and after all, he thought, why not?
+0100021|easy|How small, thought Winston, how small it always was!
+0100021|easy|Twenty minutes, an hour-it was difficult to judge.
+0100021|easy|Not brainy, of course, but keen.
+0100021|easy|It was definitely, unmistakably, a shade of green.
+0100021|medium|We, the Party, control all records, and we control all memories.
+0100021|hard|The fingers stood up before his eyes like pillars, enormous, blurry, and seeming to vibrate, but unmistakably four.
+0100021|medium|Later, in the twentieth century, there were the totalitarians, as they were called.
+0100021|easy|It must be he, Winston, who was mad.
+0100021|medium|Over the body-but, above all, over the mind.
+0100021|medium|Power over matter-external reality, as you would call it-is not important.
+0100021|easy|There will be no art, no literature, no science.
+0100021|hard|The espionage, the betrayals, the arrests, the tortures, the executions, the disappearances will never cease.
+0100021|hard|Every day, at every moment, they will be defeated, discredited, ridiculed, spat upon and yet they will always survive.
+0100021|easy|Nine, ten, eleven teeth left.
+0100021|easy|How intelligent, he thought, how intelligent!
+0100021|easy|Everything was settled, smoothed out, reconciled.
+0100021|medium|There were no more doubts, no more arguments, no more pain, no more fear.
+0100021|hard|It may be burial alive, or death by fire, or by drowning, or by impalement, or fifty other deaths.
+0100021|easy|That, too, seemed to come from outside himself.
+0100021|medium|It was hopeless; every part of him, even his head, was held immovably.
+0100021|easy|He was blind, helpless, mindless.
+0100021|hard|And then-no, it was not relief, only hope, a tiny fragment of hope.
+0100021|easy|Always, without exception, it is so arranged.
+0100021|hard|It might mean anything: defeat, breakdown, the redivision of the world, the destruction of the Party!
+0100021|easy|It was his life, his death, and his resurrection.
+0100021|easy|The word WELL, for example, was replaced by GOODWISE.
+0100021|hard|DARK, for example, could be replaced by UNLIGHT, or LIGHT by UNDARK, according to preference.
+0100021|medium|A few blanket words covered them, and, in covering them, abolished them.
 
+pg76|easy|Well, then, the old thing commenced again.
+pg76|easy|Oh, yes, you got a gun.
+pg76|medium|The rain poured down, and never a light showed; everybody in bed, I reckon.
+pg76|hard|Well, before long, here comes the wreck, dim and dusky, sliding along down!
+pg76|hard|Well, he was right; he was most always right; he had an uncommon level head, for a nigger.
+pg76|medium|I kept quiet, with my ears cocked, about fifteen minutes, I reckon.
+pg76|easy|Well, that was all easy, so we done it.
+pg76|easy|Admission 25 cents; children and servants, 10 cents.
+pg76|easy|Oh, no, I reckon not!
+pg76|easy|Shall I go, private, and tell Mary Jane?
+pg76|medium|And, my souls, how the people yelled and laughed, and kept it up.
+pg76|easy|Why, yonder he is, now.
+pg76|medium|Come along, Hines; come along, the rest of you.
+pg76|easy|Well, I says, I needed the watermelon.
+pg76|hard|He made up a lot, and wrote them out on a paper, and read them off, so: 1.
 
+pg84|easy|Ah, dear sister, how can I answer this question?
+pg84|hard|If I succeed, many, many months, perhaps years, will pass before you and I may meet.
+pg84|easy|Farewell, my dear, excellent Margaret.
+pg84|easy|This, briefly, is his story.
+pg84|easy|I will be cool, persevering, and prudent.
+pg84|hard|I once had a friend, the most noble of human creatures, and am entitled, therefore, to judge respecting friendship.
+pg84|hard|One day, when my father had gone by himself to Milan, my mother, accompanied by me, visited this abode.
+pg84|easy|Her ugly sister, Manon, married M.
+pg84|easy|Duvillard, the rich banker, last autumn.
+pg84|easy|And how, Victor, can I relate our misfortune?
+pg84|easy|Poor, poor girl, is she the accused?
+pg84|easy|Surprise, horror, and misery were strongly expressed.
+pg84|hard|You, my playfellow, my companion, my sister, perish on the scaffold!
+pg84|easy|Justine died, she rested, and I was alive.
+pg84|medium|I, not in deed, but in effect, was the true murderer.
+pg84|hard|You, my creator, abhor me; what hope can I gather from your fellow creatures, who owe me nothing?
+pg84|hard|Their food, as I afterwards found, was coarse, but it was wholesome; and they procured a sufficiency of it.
+pg84|hard|Fit habitation for gods, which, so short a time before, was bleak, damp, and unwholesome.
+pg84|hard|Some hours passed thus, while they, by their countenances, expressed joy, the cause of which I did not comprehend.
+pg84|hard|Was man, indeed, at once so powerful, so virtuous and magnificent, yet so vicious and base?
+pg84|hard|I heard of the division of property, of immense wealth and squalid poverty, of rank, descent, and noble blood.
+pg84|easy|She fell, however, into good hands.
+pg84|medium|Should she indeed awake, and see me, and curse me, and denounce the murderer?
+pg84|medium|Know that, one by one, my friends were snatched away; I was left desolate.
+pg84|easy|Such a monster has, then, really existence!
+pg84|medium|Yet could I, in justice, or even in possibility, refuse this demand?
+pg84|easy|Are you, then, so easily turned from your design?
+pg84|hard|No guilt, no mischief, no malignity, no misery, can be found comparable to mine.
+pg84|hard|I, the miserable and the abandoned, am an abortion, to be spurned at, and kicked, and trampled on.
 
+pg1184|easy|Look, Fernand, your eyes are better than mine.
+pg1184|hard|My friends will be there, I hope; that is to say, you are invited, M.
+pg1184|hard|Morrel, to whom, next to my father, I owe every blessing I enjoy, every difficulty has been removed.
+pg1184|easy|Old Dantès, however, sprang forward.
+pg1184|hard|If any harm come of it, it should fall on the guilty person; and that, you know, is Fernand.
+pg1184|hard|As for my disposition, that is, perhaps, somewhat too hasty; but I have striven to repress it.
+pg1184|easy|Tomorrow, perhaps, he may change you.
+pg1184|hard|Sire, the usurper is arming three ships, he meditates some project, which, however mad, is yet, perhaps, terrible.
+pg1184|easy|I am, indeed, to be pitied.
+pg1184|easy|Well, sir, what you tell me is impossible.
+pg1184|medium|Unfortunately, there are great words, as there are great men; I have measured them.
+pg1184|medium|He used to weep, he now laughs; he grew thin, he now grows fat.
+pg1184|medium|Unhappy he, who, on the brink of misfortune, broods over ideas like these!
+pg1184|hard|All his furniture consisted of a bed, a chair, a table, a pail, and a jug.
+pg1184|easy|The jailer, therefore, only grumbled.
+pg1184|medium|Another had done all this; why, then, was it impossible to Dantès?
+pg1184|easy|No, be assured, I am not mad.
+pg1184|medium|This island was, always had been, and still is, completely deserted.
+pg1184|medium|Oh, yes, yes; be assured I shall save you!
+pg1184|medium|He remained, therefore, mute and motionless, hardly venturing to breathe.
+pg1184|easy|Oh, my God, I have suffered enough surely!
+pg1184|medium|An instant after, the boat, rowed by two men, advanced rapidly towards him.
+pg1184|medium|The four seamen, who composed the crew, obeyed, while the pilot looked on.
+pg1184|easy|The point was, then, to discover the hidden entrance.
+pg1184|easy|He found Edmond lying prone, bleeding, and almost senseless.
+pg1184|medium|Dantès approached the upper rock, which now, without any support, leaned towards the sea.
+pg1184|easy|Dantès turned pale, hesitated, and reflected.
+pg1184|medium|He glanced around this second grotto; it was, like the first, empty.
+pg1184|easy|Dantès, meanwhile, went on his way.
+pg1184|hard|In the passage she saw a retreating shadow; it was Julie, who, uneasy herself, had anticipated her mother.
+pg1184|easy|You have a calm, strong mind, Maximilian.
+pg1184|hard|If, on the contrary, I die, remember, Maximilian, my corpse is that of an honest but unfortunate man.
+pg1184|medium|They were Phryne, Cleopatra, Messalina, those three celebrated courtesans.
+pg1184|medium|Moreover, other ideas, much more enthralling, occupied his mind.
+pg1184|hard|The curate, astonished at his quickness and intelligence, made him a present of pens, paper, and a penknife.
+pg1184|hard|Cucumetto had been there, however, by accident, as he said, and had carried the maiden off.
+pg1184|medium|He was standing, his arms folded, near Rita, who was still insensible.
+pg1184|hard|Andrea was short and fat; his visage, marked with brutal cruelty, did not indicate age; he might be thirty.
+pg1184|easy|Albert, in his turn, sat behind.
+pg1184|hard|Your offer, however, smooths all difficulties, and I have only to ask you, my dear M.
+pg1184|medium|I shall come back to dessert; keep me some strawberries, coffee, and cigars.
+pg1184|hard|I beg you, therefore, to excuse if you find anything in me too Turkish, too Italian, or too Arabian.
+pg1184|easy|Come, gentlemen, let us all propose some place.
+pg1184|easy|He knows my tastes, my caprices, my wants.
+pg1184|easy|France will not, perhaps, be always ungrateful.
+pg1184|hard|This house, isolated from the rest, had, besides the main entrance, another in the Rue de Ponthieu.
+pg1184|hard|Monte Cristo, on the contrary, took the right hand; arrived near a clump of trees, he stopped.
+pg1184|medium|At last, however, we succeeded, and worked up to Arles.
+pg1184|hard|Three brigands, called Trestaillon, Truphemy, and Graffan, publicly assassinated everybody whom they suspected of Bonapartism.
+pg1184|hard|Well, I, who am a Bonapartist also, declare one thing to you, which is, that I will kill you.
+pg1184|medium|Nothing, then, preventing my escape by this means, I examined the grounds.
+pg1184|hard|Joannes, in the Palais Royal, arcade Pierre, No. 45.
+pg1184|medium|Villefort merited punishment for what he had done to you, and, perhaps, to others.
+pg1184|easy|Retire within, Bertuccio, and tranquillize your mind.
+pg1184|medium|As Bertuccio, with a respectful bow, was moving away, the count called him back.
+pg1184|medium|As for the Théatre Français, you know, of course, that it is nowhere.
+pg1184|easy|That happened, as I told you, in 1829.
+pg1184|medium|Let us, then, hope for the best; hope is so sweet a comforter.
+pg1184|hard|Science loves eccentricities, leaps and bounds, trials of strength, fancies, if I may be allowed so to term them.
+pg1184|medium|He had a remarkably fine garden, full of vegetables, flowers, and fruit.
+pg1184|medium|So, then, the rabbit dies, and justice takes no notice.
+pg1184|easy|Why, to converse with him, of course.
+pg1184|easy|Several persons are invited, and among others, M.
+pg1184|hard|My brother Edward, who inherits nothing from his mother, will, therefore, be poor in comparison with me.
+pg1184|easy|Indeed, almost before the door opened, the scene changed.
+pg1184|easy|I, indeed, invited them here today on your account.
+pg1184|medium|Your tilbury, your groom, your clothes, are not then hired?
+pg1184|easy|Stop there, madame, for this cannot last.
+pg1184|easy|You look careworn; really, you alarm me.
+pg1184|easy|Spare me, then, I beseech you.
+pg1184|easy|Alas, no, I know not.
+pg1184|hard|Never, till then, had I placed any confidence in presentiments, but now I cannot help believing them, Valentine.
+pg1184|medium|Franz, to provoke him, and to fight with him; all that would be folly.
+pg1184|easy|Live, Maximilian, and I will be yours.
+pg1184|easy|On him, on him, always on him!
+pg1184|medium|Yes, you are right, Maximilian, I will follow you.
+pg1184|easy|The general, who had almost fainted, revived.
+pg1184|medium|Andrea had, then, in a fortnight, attained a very fair position.
+pg1184|easy|Cavalcanti, being left alone, turned to Monte Cristo.
+pg1184|easy|However, he remained standing, clinging to a window.
+pg1184|easy|The Lemonade Morrel was, in fact, very happy.
+pg1184|easy|All these women had been, or were, beautiful.
+pg1184|hard|Ah, yes; you look at my room, my four straw chairs, my images, three francs each.
+pg1184|medium|Well, my friend, fortune is inconstant, as the chaplain of the regiment said.
+pg1184|easy|Do I, for instance, fare better?
+pg1184|easy|Caderousse, terrified, looked at the count.
+pg1184|easy|But, once started, he could not stop.
+pg1184|easy|My God, my Lord, I have long despised thee!
+pg1184|medium|Do you wish these proofs, these attestations, which I alone possess, to be destroyed?
+pg1184|medium|Oh, Beauchamp, Beauchamp, how shall I now approach mine?
+pg1184|easy|Silence, purveyor of gossip, do not spread that report.
+pg1184|easy|Albert bathed, took his supper, and went to bed.
+pg1184|easy|No, Albert, take my advice.
+pg1184|easy|Why, you are mad, Albert!
+pg1184|hard|Then, the effort having exhausted her strength, she fell, not asleep this time, but fainting on the floor.
+pg1184|hard|Moreover, do not alarm yourself, Morrel; this weakness, if it is such, is betrayed to you alone.
+pg1184|easy|You had friends, Albert; break off their acquaintance.
+pg1184|hard|Albert took the letter, opened, and read it, then looked round for Bertuccio, but he was gone.
+pg1184|easy|Your mother, Albert, knows that poor house well.
+pg1184|medium|Are you not the Captain Fernand who betrayed, sold, and murdered his benefactor, Ali?
+pg1184|easy|Maximilian, in his devotedness, gazed silently at her.
+pg1184|easy|Death is now, perhaps, striking a fourth blow.
+pg1184|easy|Have you, then, power against death?
+pg1184|hard|This new tenant, who, as we have said, was an Italian, was called Il Signor Giacomo Busoni.
+pg1184|medium|I actually love no one, sir; you know it, do you not?
+pg1184|easy|No, indeed; the exclamation appears quite theatrical and affected.
+pg1184|hard|Andrea, surrounded by his friends, complimented, flattered, beginning to believe in the reality of his dream, was almost bewildered.
+pg1184|hard|There was, indeed, reason to retreat, to be alarmed, and to scream.
+pg1184|easy|Debray, perhaps, as it was once proposed.
+pg1184|easy|Come, Louise, let us talk of our affairs.
+pg1184|hard|He glanced around, looked in the bed, shook the curtains, opened the closets, and finally stopped at the chimney.
+pg1184|easy|Andrea, as we can see, was surrounded by misfortune.
+pg1184|medium|At twenty minutes to twelve, Madame Danglars, tired of waiting, returned home.
+pg1184|medium|No, madame; the law has commanded, and when it commands it strikes.
+pg1184|medium|No, madame, they struck me, always struck me!
+pg1184|easy|The nails, too, were turning blue.
+pg1184|medium|On a sudden she stepped, or rather bounded, with outstretched arms, towards the table.
+pg1184|easy|His glance, at first wandering, fixed itself upon Morrel.
+pg1184|medium|Morrel, however, extended his arm, and commanded silence.
+pg1184|easy|The two doctors, therefore, entered the room alone.
+pg1184|medium|Noirtier was near the bed, pale, motionless, and silent as the corpse.
+pg1184|easy|Danglars says, you are rich, and perfectly free.
+pg1184|easy|Has Lamoricière, that Ney of the South, been killed?
+pg1184|easy|Has Morrel, whom we know, been killed?
+pg1184|easy|And, then, to be here so young!
+pg1184|medium|Ah, yes; we burn, as they say at the game of pincette.
+pg1184|easy|Oh, my brain whirls; I no longer understand anything.
+pg1184|hard|Everyone, therefore, ran to the court; some to witness the sight, others to comment upon it.
+pg1184|easy|This strange, unexpected, terrible accusation has disordered your reason.
+pg1184|easy|The horses, impelled by fear, flew towards the house.
+pg1184|hard|He took the child in his arms, embraced him, shook him, called him, but the child made no response.
+pg1184|hard|Oh, no, Edmond, it is myself that I blame, myself that I hate!
+pg1184|easy|I live, as it were, between two graves.
+pg1184|easy|Oh, those figures, how well I remember them!
+pg1184|hard|He, too, ten years ago, had piously sought out a tomb, and sought it vainly.
+pg1184|medium|One day he miraculously left the prison, transformed, rich, powerful.
+pg1184|medium|Old Pastrini, our former acquaintance, received the traveller at the door, hat in hand.
+pg1184|hard|Danglars, astonished, opened the door; but a strong hand pushed him back, and the carriage rolled on.
+pg1184|hard|He no longer possessed strength, will, power, or feeling; he followed where they led him.
+pg1184|medium|Ali, mute and attentive, brought the pipes and coffee, and disappeared.
+pg1184|medium|Morrel, overpowered, turned around in the armchair; a delicious torpor permeated every vein.
+
+pg1260|medium|They say he is like Fielding: they talk of his wit, humour, comic powers.
+pg1260|medium|Why was I always suffering, always browbeaten, always accused, for ever condemned?
+pg1260|easy|Eliza, who was headstrong and selfish, was respected.
+pg1260|hard|Georgiana, who had a spoiled temper, a very acrid spite, a captious and insolent carriage, was universally indulged.
+pg1260|easy|November, December, and half of January passed away.
+pg1260|hard|The meal over, prayers were read by Miss Miller, and the classes filed off, two and two, upstairs.
+pg1260|easy|And why has she, or any other, curled hair?
+pg1260|medium|She wore it till evening, patient, unresentful, regarding it as a deserved punishment.
+pg1260|easy|And where, meantime, was Helen Burns?
+pg1260|easy|Bless you, child; what an idea!
+pg1260|medium|It was a curious laugh; distinct, formal, mirthless.
+pg1260|easy|Many, no doubt; and I shall be called discontented.
+pg1260|easy|October, November, December passed away.
+pg1260|easy|The subjects had, indeed, risen vividly on my mind.
+pg1260|hard|My position, Miss Eyre, with my back to the fire, and my face to the room, favours observation.
+pg1260|medium|I, indeed, talked comparatively little, but I heard him talk with relish.
+pg1260|easy|The clock, far down in the hall, struck two.
+pg1260|hard|Fairfax; I thought no more of Grace Poole, or the laugh: in an instant, I was within the chamber.
+pg1260|easy|Why had he enjoined me, too, to secrecy?
+pg1260|hard|There were but eight; yet, somehow, as they flocked in, they gave the impression of a much larger number.
+pg1260|medium|She had a slight figure, a pale, gentle face, and fair hair.
+pg1260|easy|I regarded her, of course, with special interest.
+pg1260|easy|It was not, however, so saturnine a pride!
+pg1260|easy|Yet now, how distant, how far estranged we were!
+pg1260|hard|If you knew it, you are peculiarly situated: very near happiness; yes, within reach of it.
+pg1260|hard|They ran to and fro; they crowded together: some sobbed, some stumbled: the confusion was inextricable.
+pg1260|hard|Not, however, to go to bed: on the contrary, I began and dressed myself carefully.
+pg1260|easy|I dressed, then, to be ready for emergencies.
+pg1260|easy|God, who does the work, ordains the instrument.
+pg1260|easy|They were very cold, indeed, at first.
+pg1260|hard|Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless?
+pg1260|easy|Will I not guard, and cherish, and solace her?
+pg1260|hard|When I looked up, on leaving his arms, there stood the widow, pale, grave, and amazed.
+pg1260|hard|He is a proud man: all the Rochesters were proud: and his father, at least, liked money.
+pg1260|easy|He, too, has always been called careful.
+pg1260|hard|I dangers dared; I hindrance scorned; I omens did defy: Whatever menaced, harassed, warned, I passed impetuous by.
+pg1260|hard|Fairfax, I saw, approved me: her anxiety on my account vanished; therefore I was certain I did well.
+pg1260|hard|Stay till he comes, reader; and, when I disclose my secret to him, you shall share the confidence.
+pg1260|medium|It was he: here he was, mounted on Mesrour, followed by Pilot.
+pg1260|hard|He had a rounded, muscular, and vigorous hand, as well as a long, strong arm.
+pg1260|easy|Sophie, I supposed, had come in.
+pg1260|medium|And now, no more sombre thoughts: chase dull care away, Janet.
+pg1260|easy|Not, perhaps, once in a hundred years.
+pg1260|hard|Fairfax, Adèle, Sophie, Leah, advanced to meet and greet us.
+pg1260|hard|I used all despatch, and am thankful I was not too late: as you, doubtless, must be also.
+pg1260|easy|I suppose, then, your heart has been weeping blood?
+pg1260|easy|Jane, you shall not stay here, nor will I.
+pg1260|easy|Now for vexation, and exasperation, and endless trouble!
+pg1260|hard|I found her a fine woman, in the style of Blanche Ingram: tall, dark, and majestic.
+pg1260|hard|I was dazzled, stimulated: my senses were excited; and being ignorant, raw, and inexperienced, I thought I loved her.
+pg1260|hard|She had two successors: an Italian, Giacinta, and a German, Clara; both considered singularly handsome.
+pg1260|hard|Clara was honest and quiet; but heavy, mindless, and unimpressible: not one whit to my taste.
+pg1260|medium|Yet, for a long time, I treated you distantly, and sought your company rarely.
+pg1260|medium|Terrible moment: full of struggle, blackness, burning!
+pg1260|medium|It was yet night, but July nights are short: soon after midnight, dawn comes.
+pg1260|medium|He would feel himself forsaken; his love rejected: he would suffer; perhaps grow desperate.
+pg1260|easy|I opened the door, passed out, shut it softly.
+pg1260|hard|Through that I departed: it, too, I shut; and now I was out of Thornfield.
+pg1260|easy|As yet my flight, I was sure, was undiscovered.
+pg1260|hard|As yet I had not thought; I had only listened, watched, dreaded; now I regained the faculty of reflection.
+pg1260|medium|Thus lodged, I was not, at least at the commencement of the night, cold.
+pg1260|hard|Night was come, and her planets were risen: a safe, still night: too serene for the companionship of fear.
+pg1260|easy|What a still, hot, perfect day!
+pg1260|hard|Life, however, was yet in my possession, with all its requirements, and pains, and responsibilities.
+pg1260|easy|In all likelihood, though, I should die before morning.
+pg1260|medium|It burnt on, however, quite steadily, neither receding nor advancing.
+pg1260|medium|Worn out, indeed, I was; not another step could I stir.
+pg1260|easy|Oh, this last hour, approaching in such horror!
+pg1260|medium|She had, I thought, a remarkable countenance, instinct both with power and goodness.
+pg1260|easy|Hannah, the servant, was my most frequent visitor.
+pg1260|hard|He pronounced it needless to send for a doctor: nature, he was sure, would manage best, left to herself.
+pg1260|medium|I examined, first, the parlour, and then its occupant.
+pg1260|easy|This is a gentle delineation, is it not, reader?
+pg1260|medium|To this neighbourhood, then, I came, quite destitute.
+pg1260|hard|I liked to read what they liked to read: what they enjoyed, delighted me; what they approved, I reverenced.
+pg1260|hard|Thought fitted thought; opinion met opinion: we coincided, in short, perfectly.
+pg1260|medium|Physically, she far excelled me: she was handsome; she was vigorous.
+pg1260|medium|Thus occupied, and mutually entertained, days passed like hours, and weeks like days.
+pg1260|hard|Knitting, sewing, reading, writing, ciphering, will be all you will have to teach.
+pg1260|medium|He lifted his gaze, too, from the daisies, and turned it on her.
+pg1260|easy|An unsmiling, a searching, a meaning gaze it was.
+pg1260|hard|Of course, she knew her power: indeed, he did not, because he could not, conceal it from her.
+pg1260|easy|Rosamond a sufferer, a labourer, a female apostle?
+pg1260|hard|I know it is ignoble: a mere fever of the flesh: not, I declare, the convulsion of the soul.
+pg1260|medium|I heard a noise: the wind, I thought, shook the door.
+pg1260|medium|It aroused him; he uncrossed his legs, sat erect, turned to me.
+pg1260|easy|One does not jump, and spring, and shout hurrah!
+pg1260|hard|Besides, the words Legacy, Bequest, go side by side with the words, Death, Funeral.
+pg1260|hard|Those who had saved my life, whom, till this hour, I had loved barrenly, I could now benefit.
+pg1260|easy|Now, I did not like this, reader.
+pg1260|easy|I, for instance, am but dust and ashes.
+pg1260|easy|That, too, is very clear to my vision.
+pg1260|medium|Your words are such as ought not to be used: violent, unfeminine, and untrue.
+pg1260|medium|I sincerely, deeply, fervently longed to do what was right; and only that.
+pg1260|easy|I will be your neighbour, your nurse, your housekeeper.
+pg1260|medium|Cheered, as I have said, he was: and yet but by fits.
+pg1260|easy|I would not, therefore, immediately charm the snake.
+pg1260|hard|He is good and great, but severe; and, for me, cold as an iceberg.
+pg1260|hard|He is not like you, sir: I am not happy at his side, nor near him, nor with him.
+pg1260|hard|Ferndean is buried, as you see, in a heavy wood, where sound falls dull, and dies unreverberating.
+pg1260|medium|His letter was then calm, and, though very serious, kind.
+pg1260|hard|My Edward and I, then, are happy: and the more so, because those we most love are happy likewise.
+
+pg1342|hard|He was at the same time haughty, reserved, and fastidious; and his manners, though well bred, were not inviting.
+pg1342|easy|The distinction had, perhaps, been felt too strongly.
+pg1342|easy|They all paint tables, cover screens, and net purses.
+pg1342|easy|But, however, he did not.
+pg1342|easy|The loo table, however, did not appear.
+pg1342|easy|No, no; I feel he may defy us there.
+pg1342|medium|I have faults enough, but they are not, I hope, of understanding.
+pg1342|hard|On Sunday, after morning service, the separation, so agreeable to almost all, took place.
+pg1342|easy|Lydia, my love, ring the bell.
+pg1342|easy|Both changed colour, one looked white, the other red.
+pg1342|medium|Philips, and was, by her watchfulness, most abundantly supplied with coffee and muffin.
+pg1342|easy|Her curiosity, however, was unexpectedly relieved.
+pg1342|easy|Society, I own, is necessary to me.
+pg1342|hard|She is a handsome girl, about fifteen or sixteen, and, I understand, highly accomplished.
+pg1342|medium|Whatever he said, was said well; and whatever he did, done gracefully.
+pg1342|medium|Attention, forbearance, patience with Darcy, was injury to Wickham.
+pg1342|easy|Though her manner varied, however, her determination never did.
+pg1342|easy|His reception, however, was of the most flattering kind.
+pg1342|hard|Bennet; and, therefore, instead of making any answer, she went on as before.
+pg1342|hard|Philips, was an amiable, intelligent, elegant woman, and a great favourite with her Longbourn nieces.
+pg1342|easy|The Lucases are very artful people, indeed, sister.
+pg1342|easy|Here, consequently, was an inexhaustible subject of discourse.
+pg1342|easy|I pity, though I cannot help blaming, her.
+pg1342|easy|Collins, was a very genteel, pretty kind of girl.
+pg1342|easy|Collins, gratefully accepted, and immediately ordered.
+pg1342|easy|Well, Colonel Fitzwilliam, what do I play next?
+pg1342|medium|She stared, coloured, doubted, and was silent.
+pg1342|easy|My faults, according to this calculation, are heavy indeed!
+pg1342|easy|Perhaps this concealment, this disguise, was beneath me.
+pg1342|medium|Astonishment, apprehension, and even horror, oppressed her.
+pg1342|hard|Of neither Darcy nor Wickham could she think, without feeling that she had been blind, partial, prejudiced, absurd.
+pg1342|easy|But vanity, not love, has been my folly.
+pg1342|easy|They were ignorant, idle, and vain.
+pg1342|easy|Mamma would like to go, too, of all things!
+pg1342|hard|Well, but now for my news: it is about dear Wickham; too good for the waiter, is not it?
+pg1342|easy|There was another reason, too, for her opposition.
+pg1342|easy|Well, well, I only hope it will last.
+pg1342|medium|Vain, ignorant, idle, and absolutely uncontrolled!
+pg1342|easy|To Pemberley, therefore, they were to go.
+pg1342|easy|Her aunt asked her, smilingly, how she liked it.
+pg1342|easy|Elizabeth, on her side, had much to do.
+pg1342|medium|Bingley was ready, Georgiana was eager, and Darcy determined, to be pleased.
+pg1342|medium|Gardiner, and Miss Bennet, to dinner at Pemberley, before they left the country.
+pg1342|easy|They were, therefore, to go.
+pg1342|medium|Gardiner and her niece, however, did her justice, and pitied her.
+pg1342|easy|Our distress, my dear Lizzy, is very great.
+pg1342|easy|I grieve to find, however, that Colonel F.
+pg1342|medium|I am not so selfish, however, as to press for it, if inconvenient.
+pg1342|easy|If, indeed, it should be so!
+pg1342|easy|But, really, I know not what to say.
+pg1342|easy|Oh, brother, how kind you are!
+pg1342|easy|Assistance is impossible; condolence, insufferable.
+pg1342|medium|Bennet: one communication would, therefore, do for all.
+pg1342|easy|Stay, stay, I will go myself.
+pg1342|easy|Ring the bell, Kitty, for Hill.
+pg1342|easy|Other schemes, too, came into her head.
+pg1342|medium|She was humbled, she was grieved; she repented, though she hardly knew of what.
+pg1342|hard|Bennet, as the carriage drove up to the door; her husband looked impenetrably grave; her daughters, alarmed, anxious, uneasy.
+pg1342|hard|Lydia was Lydia still; untamed, unabashed, wild, noisy, and fearless.
+pg1342|medium|You were not by, when I told mamma, and the others, all about it.
+pg1342|easy|Not one party, or scheme, or anything!
+pg1342|hard|To be sure, London was rather thin, but, however, the Little Theatre was open.
+pg1342|medium|I fancy, Lizzy, that obstinacy is the real defect of his character, after all.
+pg1342|medium|But, Lizzy, this must go no further than yourself, or Jane at most.
+pg1342|easy|He had, to be sure, done much.
+pg1342|easy|He smiled, looked handsome, and said many pretty things.
+pg1342|medium|She looked at Jane, and smiled, and shook her head, by turns.
+pg1342|medium|But, however, he is very welcome to come to Netherfield, if he likes it.
+pg1342|easy|It was a painful, but not an improbable, conjecture.
+pg1342|easy|Elizabeth, with a triumphant sensation, looked towards his friend.
+pg1342|easy|Come, be quick, be quick!
+pg1342|medium|You will be censured, slighted, and despised, by everyone connected with him.
+pg1342|easy|You refuse, then, to oblige me.
+pg1342|medium|They lagged behind, while Elizabeth, Kitty, and Darcy were to entertain each other.
+pg1342|easy|Yet, indeed, I am in earnest.
+pg1342|medium|But, Lizzy, you have been very sly, very reserved with me.
+pg1342|medium|The fact is, that you were sick of civility, of deference, of officious attention.
+pg1342|easy|He bore it, however, with admirable calmness.
+
+pg1400|hard|Ours was the marsh country, down by the river, within, as the river wound, twenty miles of the sea.
+pg1400|medium|Within myself, I had sustained, from my babyhood, a perpetual conflict with injustice.
+pg1400|medium|She stood looking at me, and, of course, I stood looking at her.
+pg1400|medium|It was very dark, very wet, very muddy, and so we splashed along.
+pg1400|medium|Thereupon, I had brought in all our hammers, one after another, but without avail.
+pg1400|easy|Then, and after that, I took it.
+pg1400|easy|In short, whatever I knew, Biddy knew.
+pg1400|easy|You are envious, Biddy, and grudging.
+pg1400|easy|Miss Havisham, you must know, was a spoilt child.
+pg1400|easy|Jane, you undutiful little thing, go and lie down.
+pg1400|easy|I acquiesced, of course, knowing nothing to the contrary.
+pg1400|hard|Rather tall, of a lithe nimble figure, extremely pale, with large faded eyes, and a quantity of streaming hair.
+pg1400|medium|My patroness, too, might hear of him, and not approve.
+pg1400|hard|Therefore we had sat, feeling keenly for him, but laughing, nevertheless, from ear to ear.
+pg1400|easy|Wemmick appeared, handed it in, and disappeared.
+pg1400|medium|Now, that handsome sum of money, Pip, is your own.
+pg1400|hard|Let my body be where it would, my spirit was always wandering, wandering, wandering, about that house.
+pg1400|hard|It was wretched weather; stormy and wet, stormy and wet; and mud, mud, mud, deep in all the streets.
+pg1400|easy|Why, look at you, dear boy!
+pg1400|easy|And, dear boy, how good looking you have growed!
+pg1400|medium|Yes, he said; at different times of the night, three.
+pg1400|easy|Now, go on, dear boy.
+pg1400|medium|This business transacted, I turned my face, on my own account, to Little Britain.
+pg1400|easy|Not very strong, that hope, if you went soldiering!
+pg1400|hard|It is not a fortunate discovery, and is not likely ever to enrich me in reputation, station, fortune, anything.
+pg1400|hard|You, so young, untried, and beautiful, Estella!
+pg1400|easy|How anxious, how dismal, how long!
+pg1400|medium|Prosperously, but not noticeably otherwise; he thought, in black.
+pg1400|medium|But, to any mind, I thought, the connection here was clear and straight.
+pg1400|easy|So cold, so lonely, so dreary all!
+pg1400|medium|The falser he, the truer Joe; the meaner he, the nobler Joe.
+pg1400|hard|And why, do you suppose, above all things, Pip, she left that cool four thousand unto him?
+pg1400|hard|No gleam of fire, no glittering shower of sparks, no roar of bellows; all shut up, and still.
+
+pg1533|medium|Thou shalt get kings, though thou be none: So all hail, Macbeth and Banquo!
+pg1533|easy|Stay, you imperfect speakers, tell me more.
+pg1533|easy|What, sir, not yet at rest?
+pg1533|easy|Thanks, sir: the like to you.
+pg1533|hard|Faith, sir, we were carousing till the second cock; and drink, sir, is a great provoker of three things.
+pg1533|hard|Lechery, sir, it provokes and unprovokes; it provokes the desire, but it takes away the performance.
+pg1533|hard|What should be spoken here, where our fate, Hid in an auger hole, may rush, and seize us?
+pg1533|easy|How goes the world, sir, now?
+pg1533|easy|They are, my lord, without the palace gate.
+pg1533|easy|We shall, my lord, Perform what you command us.
+pg1533|easy|Ay, madam, but returns again tonight.
+pg1533|hard|So shall I, love; and so, I pray, be you.
+pg1533|easy|O, full of scorpions is my mind, dear wife!
+pg1533|medium|Our hostess keeps her state; but, in best time, We will require her welcome.
+pg1533|easy|His absence, sir, Lays blame upon his promise.
+pg1533|easy|Gentlemen, rise; his Highness is not well.
+pg1533|medium|To all, and him, we thirst, And all to all.
+pg1533|medium|I pray you, speak not; he grows worse and worse; Question enrages him.
+pg1533|hard|Double, double, toil and trouble; Fire, burn; and cauldron, bubble.
+pg1533|medium|How now, you secret, black, and midnight hags!
+pg1533|easy|Come, high or low; Thyself and office deftly show!
+pg1533|easy|Be bloody, bold, and resolute.
+pg1533|easy|Then live, Macduff: what need I fear of thee?
+pg1533|medium|Show his eyes, and grieve his heart; Come like shadows, so depart!
+pg1533|easy|Now, God help thee, poor monkey!
+pg1533|easy|What you have spoke, it may be so, perchance.
+pg1533|easy|Alas, poor country, Almost afraid to know itself!
+pg1533|easy|O, relation Too nice, and yet too true!
+pg1533|medium|Wife, children, servants, all That could be found.
+pg1533|easy|That, sir, which I will not report after her.
+pg1533|medium|This is her very guise; and, upon my life, fast asleep.
+pg1533|easy|For certain, sir, he is not.
+pg1533|easy|The Queen, my lord, is dead.
+pg1533|easy|Hail, King, for so thou art.
+
+pg2701|medium|Go from Corlears Hook to Coenties Slip, and from thence, by Whitehall, northward.
+pg2701|medium|A boggy, soggy, squitchy picture truly, enough to drive a nervous man distracted.
+pg2701|easy|And what is it, thought I, after all!
+pg2701|hard|It is a land of oil, true enough: but not like Canaan; a land, also, of corn and wine.
+pg2701|easy|Yes, Ishmael, the same fate may be thine.
+pg2701|hard|No, thought I, there must be some sober reason for this thing; furthermore, it must symbolize something unseen.
+pg2701|easy|There lurks, perhaps, a hitherto unheeded meaning here.
+pg2701|medium|The floor, the ceiling, and the side, are all awry.
+pg2701|hard|And here, shipmates, is true and faithful repentance; not clamorous for pardon, but grateful for punishment.
+pg2701|medium|Consequently, I must then unite with him in his; ergo, I must turn idolator.
+pg2701|hard|What wonder, then, that these Nantucketers, born on a beach, should take to the sea for a livelihood!
+pg2701|easy|Come aboard, come aboard; never mind about the papers.
+pg2701|easy|I say, Quohog, blast ye!
+pg2701|easy|Morning to ye, shipmates, morning!
+pg2701|easy|Well, call all hands, then.
+pg2701|hard|Some chapters back, one Bulkington was spoken of, a tall, newlanded mariner, encountered in New Bedford at the inn.
+pg2701|easy|Take heart, take heart, O Bulkington!
+pg2701|hard|Grant it, since you cite it; but, say what you will, there is no real dignity in whaling.
+pg2701|medium|Ahab seemed a pyramid, and I, like a blazing fool, kept kicking at it.
+pg2701|easy|But, somehow, next moment I was over the fright.
+pg2701|medium|Ross Browne; the Author of Miriam Coffin; Olmstead; and the Rev.
+pg2701|hard|As yet, however, the sperm whale, scientific or poetic, lives not complete in any literature.
+pg2701|easy|In his System of Nature, A.D.
+pg2701|hard|But in brief, they are these: lungs and warm blood; whereas, all other fish are lungless and cold blooded.
+pg2701|easy|So, call him the Hyena Whale, if you please.
+pg2701|easy|He is only found, I think, in the Pacific.
+pg2701|hard|Finally: It was stated at the outset, that this system would not be here, and at once, perfected.
+pg2701|hard|Oh, Time, Strength, Cash, and Patience!
+pg2701|hard|In front is a leather rack, in which to keep your speaking trumpet, pipe, telescope, and other nautical conveniences.
+pg2701|medium|What say ye, men, will ye splice hands on it, now?
+pg2701|easy|All visible objects, man, are but as pasteboard masks.
+pg2701|medium|But look ye, Starbuck, what is said in heat, that thing unsays itself.
+pg2701|easy|The crew, man, the crew!
+pg2701|easy|So, so; it goes round excellently.
+pg2701|easy|Perchance, too, it would have dropped ye dead.
+pg2701|easy|Starbuck paled, and turned, and shivered.
+pg2701|easy|Is, then, the crown too heavy that I wear?
+pg2701|hard|Gifted with the high perception, I lack the low, enjoying power; damned, most subtly and most malignantly!
+pg2701|easy|Now, then, be the prophet and the fulfiller one.
+pg2701|medium|Stand by me, hold me, bind me, O ye blessed influences!
+pg2701|easy|So, be cheery, my lads!
+pg2701|easy|Beat thy belly, then, and wag thy ears.
+pg2701|medium|Rattle thy teeth, then, and pound away; make a pagoda of thyself.
+pg2701|easy|Up, spine, and meet it!
+pg2701|easy|Duck lower, Pip, here comes the royal yard!
+pg2701|easy|Wind ye down there, ye prouder, sadder souls!
+pg2701|medium|So, too, with some other feeding grounds, where he had at times revealed himself.
+pg2701|easy|Stop snoring, ye sleepers, and pull.
+pg2701|easy|Well, well, so be it!
+pg2701|medium|Softly, softly, and steadily, my men.
+pg2701|easy|Only pull, and keep pulling; nothing more.
+pg2701|hard|Squall, whale, and harpoon had all blended together; and the whale, merely grazed by the iron, escaped.
+pg2701|easy|However, nothing dispirits, and nothing seems worth while disputing.
+pg2701|hard|But Radney, the mate, was ugly as a mule; yet as hardy, as stubborn, as malicious.
+pg2701|easy|Well then, Don, refill my cup.
+pg2701|medium|For himself, he would do this, he said, whether they joined him or not.
+pg2701|hard|After a stiff pull, their harpooneer got fast, and, spear in hand, Radney sprang to the bow.
+pg2701|hard|Soon it went down, and while, with oars suspended, we were awaiting its reappearance, lo!
+pg2701|easy|But that pipe, poor whale, was thy last.
+pg2701|easy|Your hat, however, is the most convenient.
+pg2701|medium|Out of the trunk, the branches grow; out of them, the twigs.
+pg2701|easy|So, in productive subjects, grow the chapters.
+pg2701|easy|Away, cook, and deliver my message.
+pg2701|easy|Drop your tongs, cook, and hear my orders.
+pg2701|easy|Porpoises, indeed, are to this day considered fine eating.
+pg2701|easy|Do thou, too, remain warm among ice.
+pg2701|hard|He was a small, short, youngish man, sprinkled all over his face with freckles, and wearing redundant yellow hair.
+pg2701|easy|A deep, settled, fanatic delirium was in his eyes.
+pg2701|medium|Such things may seem incredible; but, however wondrous, they are true.
+pg2701|easy|So, then, an elongated Siamese ligature united us.
+pg2701|hard|Here, now, are two great whales, laying their heads together; let us join them, and lay together our own.
+pg2701|easy|How is it, then, with the whale?
+pg2701|medium|But, peradventure, it may be sagaciously urged, how is this?
+pg2701|easy|Yes, it was a running delivery, so it was.
+pg2701|hard|The predestinated day arrived, and we duly met the ship Jungfrau, Derick De Deer, master, of Bremen.
+pg2701|easy|A hogshead of brandy, then, to the best man.
+pg2701|easy|It was a terrific, most pitiable, and maddening sight.
+pg2701|easy|His life, as they significantly call it, was untouched.
+pg2701|medium|With a terrific snap, every fastening went adrift; the ship righted, the carcase sank.
+pg2701|medium|Would now, it were old Orleans whiskey, or old Ohio, or unspeakable old Monongahela!
+pg2701|medium|Let us, then, look at this matter, along with some interesting items contingent.
+pg2701|medium|Wherefore, among whalemen, the spout is deemed poisonous; they try to evade it.
+pg2701|hard|Dissect him how I may, then, I but go skin deep; I know him not, and never will.
+pg2701|easy|Mark this, too, in the whaler.
+pg2701|easy|My God, men, stand by!
+pg2701|hard|And all the time numberless fowls were diving, and ducking, and screaming, and yelling, and fighting around them.
+pg2701|easy|No; he did not mean to, at least.
+pg2701|hard|And an idol, indeed, it is; or, rather, in old times, its likeness was.
+pg2701|easy|Off hatch, then, and start her.
+pg2701|medium|A stark, bewildered feeling, as of death, came over me.
+pg2701|medium|This done, the hatches are replaced, and hermetically closed, like a closet walled up.
+pg2701|medium|Before this equatorial coin, Ahab, not unobserved by others, was now pausing.
+pg2701|medium|This coin speaks wisely, mildly, truly, but still sadly to me.
+pg2701|hard|Jollily he, aloft there, wheels through toil and trouble; and so, alow here, does jolly Stubb.
+pg2701|medium|The Pequod, of Nantucket, Meets the Samuel Enderby, of London.
+pg2701|medium|In short, it grew black; I knew what was threatened, and off it came.
+pg2701|hard|They had dumplings too; small, but substantial, symmetrically globular, and indestructible dumplings.
+pg2701|medium|How, then, with me, writing of this Leviathan?
+pg2701|hard|But, in the end, it all came out; this one matter did, at least.
+pg2701|hard|Slabs of ivory, leather straps, pads, screws, and various tools of all sorts lying about the bench.
+pg2701|easy|So, so; it does pinch some.
+pg2701|easy|There, take the order, and away.
+pg2701|medium|No, no, no; I must have a lantern.
+pg2701|easy|Here are two, sir; one will serve my turn.
+pg2701|easy|I thought, sir, that you spoke to carpenter.
+pg2701|easy|Truly, sir, I begin to understand somewhat now.
+pg2701|hard|Where thou feelest tingling life; there, exactly there, there to a hair, do I.
+pg2701|medium|To be short, among whalemen, the harpooneers are the holders, so called.
+pg2701|medium|I say; game, game, game!
+pg2701|easy|Oh, Death, why canst thou not sometimes be timely?
+pg2701|easy|But, as Ahab looked up, he slid aside.
+pg2701|medium|Yet dost thou, darker half, rock me with a prouder, if a darker faith.
+pg2701|medium|Well, then, did I believe all ye say, oh my pilot!
+pg2701|easy|Now jump overboard, and sing away, if thou must!
+pg2701|medium|A moment or two passed, when Starbuck, going forward, pushed against some one.
+pg2701|medium|The javelins cease; open eyes; see, or not?
+pg2701|medium|I know that of me, which thou knowest not of thyself, oh, thou omnipotent.
+pg2701|hard|Oh, thou foundling fire, thou hermit immemorial, thou too hast thy incommunicable riddle, thy unparticipated grief.
+pg2701|easy|Never mind; catch the turn there, and pass it.
+pg2701|hard|Strange, that I, who have handled so many deadly lances, strange, that I should shake so now.
+pg2701|medium|Not reasoning; not remonstrance; not entreaty wilt thou hearken to; all this thou scornest.
+pg2701|medium|Haul in here, Tahitian; reel up, Manxman.
+pg2701|easy|Haul in, haul in, Tahitian!
+pg2701|medium|These lines run whole, and whirling out: come in broken, and dragging slow.
+pg2701|easy|Come, then, to my cabin.
+pg2701|easy|But few, perhaps, thought of that at the time.
+pg2701|medium|God bless ye, man, and may I forgive myself, but I must go.
+pg2701|medium|Pass round the decanters; glad to see ye; fill up, monsieurs!
+pg2701|medium|In this foreshadowing interval too, all humor, forced or natural, vanished.
+pg2701|easy|Oh, immortal infancy, and innocency of the azure!
+pg2701|medium|Here, brush this old hair aside; it blinds me, that I seem to weep.
+pg2701|medium|But do I look very old, so very, very old, Starbuck?
+pg2701|hard|I feel deadly faint, bowed, and humped, as though I were Adam, staggering beneath the piled centuries since Paradise.
+pg2701|medium|Come, my Captain, study out the course, and let us away!
+pg2701|medium|Is it I, God, or who, that lifts this arm?
+pg2701|easy|No, no; only black water!
+pg2701|medium|Yet calm, enticing calm, oh, whale!
+pg2701|hard|In this way the day wore on; Ahab, now aloft and motionless; anon, unrestingly pacing the planks.
+pg2701|easy|Believe ye, men, in the things called omens?
+pg2701|medium|Helm there; steady, as thou goest, and hast been going.
+pg2701|easy|Aye, aye, it must be so.
+pg2701|easy|Aye, aye, I have run him by last night.
+pg2701|medium|So, so; he travels fast, and I must down.
+pg2701|hard|But aye, old mast, we both grow old together; sound in our hulls, though, are we not, my ship?
+pg2701|easy|Away, mates, to the ship!
+pg2701|hard|Oh, Ahab, Ahab, lo, thy work.
+pg2701|medium|Look ye, sun, moon, and stars!
+
+pg25344|medium|It is scarcely decorous, however, to speak all, even where we speak impersonally.
+pg25344|easy|His countenance, in this repose, was mild and kindly.
+pg25344|hard|Such an exhibition, however, was but to be pictured in fancy; not to be anticipated, nor desired.
+pg25344|medium|I cared not, at this period, for books; they were apart from me.
+pg25344|hard|Meagre, indeed, and cold was the sympathy that a transgressor might look for, from such bystanders, at the scaffold.
+pg25344|hard|He was small in stature, with a furrowed visage, which, as yet, could hardly be termed aged.
+pg25344|easy|Very soon, however, his look became keen and penetrative.
+pg25344|medium|They were, doubtless, good men, just and sage.
+pg25344|easy|What say you to it, once again, Brother Dimmesdale?
+pg25344|easy|Thou and thine, Hester Prynne, belong to me.
+pg25344|medium|Recognize me not, by word, by sign, by look!
+pg25344|medium|His fame, his position, his life, will be in my hands.
+pg25344|hard|It appalled her, nevertheless, to discern here, again, a shadowy reflection of the evil that had existed in herself.
+pg25344|easy|Little Pearl, of course, was her companion.
+pg25344|hard|The victory accomplished, Pearl returned quietly to her mother, and looked up, smiling, into her face.
+pg25344|easy|That, surely, were a shallow view of it.
+pg25344|easy|Come away, mother, or he will catch you!
+pg25344|medium|Your pardon, once again, good Sir, if my speech give the shadow of offence.
+pg25344|medium|He, if it stand with his good pleasure, can cure; or he can kill!
+pg25344|medium|But, with what a wild look of wonder, joy, and horror!
+pg25344|medium|It mattered little, for his object, whether celestial, or from what other region.
+pg25344|medium|He won it, indeed, in great part, by his sorrows.
+pg25344|easy|Why, then, had he come hither?
+pg25344|medium|But, indeed, he was blind and foolish, as he ever and always is.
+pg25344|hard|My old faith, long forgotten, comes back to me, and explains all that we do, and all we suffer.
+pg25344|easy|There it is, playing, a good way off.
+pg25344|easy|But, mother, tell me now!
+pg25344|easy|Woman, woman, thou art accountable for this!
+pg25344|medium|Heaven, likewise, had frowned upon her, and she had not died.
+pg25344|hard|Here, seen only by her eyes, Arthur Dimmesdale, false to God and man, might be, for one moment, true!
+pg25344|easy|Will he continue, then, to keep our secret?
+pg25344|hard|Had she gathered pearls, and diamonds, and rubies, in the wood, they could not have become her better.
+pg25344|hard|But see, mother, how many faces of strange people, and Indians among them, and sailors!
+pg25344|hard|Not the less, however, the great, honest face of the people smiled, grimly, perhaps, but widely too.
+pg25344|medium|The change may be for good or ill, and is partly, perhaps, for both.
+pg25344|medium|But, truly, forsooth, I find it hard to believe him the same man.
+pg25344|easy|I know thee, Hester; for I behold the token.
+pg25344|hard|These, perhaps, if more distinctly heard, might have been only a grosser medium, and have clogged the spiritual sense.
+pg25344|medium|She had an undulating, but, oftentimes, a sharp and irregular movement.
+pg25344|easy|The crowd, meanwhile, looked on with awe and wonder.
+pg25344|easy|For, Hester, I am a dying man.
+pg25344|easy|Thou wouldst not, yonder, in the forest!
+pg25344|medium|Surely, surely, we have ransomed one another, with all this woe!
+
+pg27761|hard|It is not, nor it cannot come to, good: But break, my heart, for I must hold my tongue!
+pg27761|hard|And now, good friends, As you are friends, scholars, and soldiers, Give me one poor request.
+pg27761|hard|Come, come, deal justly with me: come, come; nay, speak.
+pg27761|hard|You are welcome, masters; welcome, all: O, old friend!
+pg27761|easy|Gracious, so please you, We will bestow ourselves.
+pg27761|easy|We are arrant knaves, all; believe none of us.
+pg27761|medium|To a nunnery, go; go; go.
+pg27761|hard|Yet, though I distrust, Discomfort you, my lord, it nothing must.
+pg27761|hard|Both here, and hence, pursue me lasting strife, If, once a widow, ever I be wife!
+pg27761|hard|But, look, amazement on thy mother sits: O, step between her and her fighting soul.
+pg27761|easy|Here is, therefore, a play upon the words.
+pg27761|hard|Good night, ladies; good night, sweet ladies; good night, good night.
+pg27761|hard|O, Gertrude, Gertrude, When sorrows come, they come not single spies, But in battalions!
+pg27761|easy|Dear maid, kind sister, sweet Ophelia!
+pg27761|easy|Prithee, Horatio, tell me one thing.
+pg27761|easy|Then, venom, to thy work.
+
+pg64317|easy|I was a guide, a pathfinder, an original settler.
+pg64317|easy|The horses, needless to say, were not mentioned again.
+pg64317|medium|He was a blond, spiritless man, anaemic, and faintly handsome.
+pg64317|medium|His wife was shrill, languid, handsome, and horrible.
+pg64317|medium|The bar, where we glanced first, was crowded, but Gatsby was not there.
+pg64317|hard|Americans, while willing, even eager, to be serfs, have always been obstinate about being peasantry.
+pg64317|medium|The next day was broiling, almost the last, certainly the warmest, of the summer.
+pg64317|hard|Simultaneously I heard his voice, gruff, muffled, husky, at the hall telephone.
+pg64317|easy|Daisy rose, smiling faintly, and went to the table.
+pg64317|hard|When they met again, two days later, it was Gatsby who was breathless, who was, somehow, betrayed.
+pg64317|hard|There was a slow, pleasant movement in the air, scarcely a wind, promising a cool, lovely day.
+pg64317|easy|Listen, George, listen to me.
+pg64317|medium|Eckleburg, which had just emerged, pale and enormous, from the dissolving night.
+pg64317|hard|With scarcely a word said, four of us, the chauffeur, butler, gardener, and I hurried down to the pool.
+pg64317|medium|Angry, and half in love with her, and tremendously sorry, I turned away.
 

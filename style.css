@@ -366,3 +366,7 @@ button[state="highlight"] {
     text-align: center;
     font-size: 1.2vw;
 }
+
+#info img {
+    width: 20vw;
+}
