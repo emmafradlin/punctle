@@ -191,6 +191,9 @@ function setupChart(){
         font: {size: 16}
     };
 
+    if (Math.max(...xArray) == 0)
+        layout.xaxis = {range: [0, 1]}
+
     Plotly.newPlot("myPlot", data, layout, {staticPlot: true});
 }
 
@@ -198,7 +201,7 @@ function setupTotals(){
     let num_wins = getFromLocalStorage(mode + ":win");
     let num_losses = getFromLocalStorage(mode + ":loss");
     let played = num_wins + num_losses;
-    let win_pct = played > 0 ? Math.round(100*num_wins/played) : "";
+    let win_pct = played > 0 ? Math.round(100*num_wins/played) : "0";
 
     document.getElementById("played").innerHTML = `${played}<br/>Played`;
     document.getElementById("winpct").innerHTML = `${win_pct}<br/>Win%`;
