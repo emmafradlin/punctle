@@ -909,10 +909,7 @@ function comparePunctuation() {
                 const dropBoxIndices = dropBoxPunctuation.map(p => parseInt(p.index));
 
                 //const dropBoxColors = [];
-                const correctPunctuationCopy = correctPunctuationList;
-
-                // console.log(correctPunctuationList);
-                // console.log(userPunctuationList);
+                const correctPunctuationCopy = correctPunctuationList.slice();
 
                 //green
                 dropBoxIndices.forEach((index, i) => {
@@ -922,10 +919,9 @@ function comparePunctuation() {
                     const userPunctuation = userPunctuationList[index];
                     const correctPunctuation = correctPunctuationList[index];
 
-                    console.log("User punct: ", userPunctuation, ". Correct punct: ", correctPunctuation);
                     if (userPunctuation === correctPunctuation) {
                         dropBox.style.backgroundColor = 'green';
-                        colors.push('green');
+                        colors[i] = "green";
                         correctPunctuationCopy[index] = null;
                         userPunctuationList[index] = null;
 
@@ -948,7 +944,7 @@ function comparePunctuation() {
 
                     if (userPunctuation && correctPunctuationCopy.includes(userPunctuation)) {
                         dropBox.style.backgroundColor = 'yellow';
-                        colors.push('yellow');
+                        colors[i] = "yellow";
 
                         const matchIndex = correctPunctuationCopy.indexOf(userPunctuation);
                         correctPunctuationCopy[matchIndex] = null;
@@ -956,7 +952,7 @@ function comparePunctuation() {
                         //fullColors[currentGuess][index] = 'yellow';
                     } else {
                         dropBox.style.backgroundColor = 'gray';
-                        colors.push('gray');
+                        colors[i] = "gray";
 
                         //fullColors[currentGuess][index] = 'gray';
                     }
@@ -978,6 +974,9 @@ function comparePunctuation() {
                 guesses.push(currentGuessArray);
                 fullPunctuationIndexes.push(punctuationIndexes);
 
+                console.log("currentGuessArray", currentGuessArray);
+                console.log("punctuationIndexes", punctuationIndexes);
+                console.log("colors", colors);
                 fullColors.push(colors);
 
                 let count = 0;
@@ -1114,7 +1113,7 @@ function enableSeeGuessButtons(index) {
 }
 
 
-//event listeners for the see in sentence buttons
+//event listeners for the see in sentence buttons (seeInSetence)
 viewSentenceButtons.forEach(button => {
     button.addEventListener('click', function(event) {
         
@@ -1125,8 +1124,7 @@ viewSentenceButtons.forEach(button => {
     
         if (document.getElementById(id).textContent === "See in sentence") {
             document.getElementById(id).setAttribute("state", "highlight");
-            //document.getElementById(id).style.backgroundColor = 'red';
-
+            
             currentlyViewing = id.substring(3);
 
             let ran = false;
@@ -1168,6 +1166,10 @@ viewSentenceButtons.forEach(button => {
             
             let buttonIndex = id.substring(3) - 1;
                         
+            console.log("buttonIndex", buttonIndex);
+            console.log("fullPunctuationIndexes", fullPunctuationIndexes[buttonIndex]);
+            console.log("guesses", guesses[buttonIndex]);
+            console.log("fullColors", fullColors[buttonIndex])
             //if something is currently in there then the box content doesnt change
             
             //adding the punctuation to the sentence
@@ -1186,8 +1188,7 @@ viewSentenceButtons.forEach(button => {
 
                     } else {
                         //last run through
-                        if (i == (fullPunctuationIndexes[buttonIndex].length-1) && !didItRun) {
-                            
+                        if (i == (fullPunctuationIndexes[buttonIndex].length-1) && !didItRun) {                            
                             dropBox.textContent = '';
                             dropBox.style.backgroundColor = 'white';
                         }
@@ -1196,7 +1197,6 @@ viewSentenceButtons.forEach(button => {
             });            
         } else {
             document.getElementById(id).setAttribute("state", "active");
-            //document.getElementById(id).style.backgroundColor = 'rgb(105, 102, 102)';
 
             //enable the keyboard
             enableKeyboard();
