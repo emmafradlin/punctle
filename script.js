@@ -208,6 +208,14 @@ function setupTotals(){
 
     document.getElementById("played").innerHTML = `${played}<br/>Played`;
     document.getElementById("winpct").innerHTML = `${win_pct}<br/>Win%`;
+    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily<br/>Challenge" : "Level<br/>" + level[0].toUpperCase() + level.slice(1);
+}
+
+function setupStats(){
+    setupTotals();
+    setupChart();
+    if (mode == "daily")
+        setupCalendar();
 }
 
 /* Set the width of the sidebar to 20vh (show it) */
@@ -278,7 +286,6 @@ async function newGame() {
     resetVariables(); 
     mode = getUrlParam('mode');        
     let calendarDisplay = "none";
-    let chartDisplay = "none";
     let modeText = "";
 
     if (mode == "daily"){
@@ -288,17 +295,12 @@ async function newGame() {
         //console.log("Daily challange level index: ", levelIndex);
         level = ["easy", "medium", "hard"][levelIndex];
         calendarDisplay = "block";
-        chartDisplay = "none";
-        setupCalendar();
         document.getElementById('nextGame').style.display = "none";        
         //console.log(`Starting daily challange for ${date} game with level ${level}`);
         modeText = "Daily Challenge for " + date;
     } else {
         level = mode;
         calendarDisplay = "none";
-        //chartDisplay = getFromLocalStorage(mode + ":win") > 0 ? "block" : "none";
-        chartDisplay = "block"
-        setupChart();
         document.getElementById('nextGame').style.display = "block";
         console.log("Starting new game with level: " + level);
     }
@@ -306,9 +308,8 @@ async function newGame() {
     modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
     document.getElementById("mode").innerHTML = modeText;
 
-    setupTotals();
+    setupStats();
     document.getElementById("calendar").style.display = calendarDisplay;
-    document.getElementById("myPlot").style.display = chartDisplay;
     
     //generate random sentence and whole screen
     let success = false;
@@ -1302,11 +1303,7 @@ function updateStats(won, numGuesses){
             localStorage.setItem("d:" + getDailyChallangeDate(), 0);
     }
     
-    setupTotals();
-    if (mode == "daily")
-        setupCalendar();
-    else
-        setupChart();
+    setupStats();
 }
 
 function incrementLocalStorage(key){
