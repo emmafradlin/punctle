@@ -242,12 +242,19 @@ button[state="highlight"] {
   align-items: center;
 }
 
-#stats, #myPlot {
-  display: block;    
+#calendarAndChart {
+  display: flex;
+  gap: 0.5em;
 }
 
-#stats, #myPlot {
-  width: 30vw;
+#myPlot {
+  width: 20vw;
+  padding-right: 1vw;
+  padding-bottom: 1vh;
+}
+
+#calendar {
+  width: 17vw;
 }
 
 #stats_totals {
@@ -407,7 +414,7 @@ button[state="highlight"] {
   left:50%;
   transform:translate(-50%, -50%);
   
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgb(241, 244, 244);
   z-index: 20;
   cursor: grab;
 }    

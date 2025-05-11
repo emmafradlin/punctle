@@ -2,7 +2,7 @@ pg64317|F. Scott Fitzgerald|The Great Gatsby|https://www.gutenberg.org/cache/epu
 pg2701|Herman Melville|Moby Dick|https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Moby-Dick_FE_title_page.jpg/500px-Moby-Dick_FE_title_page.jpg
 pg27761|William Shakespeare|Hamlet, Prince of Denmark|https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Edwin_Booth_Hamlet_1870.jpg/250px-Edwin_Booth_Hamlet_1870.jpg
 pg1513|William Shakespeare|Romeo and Juliet|https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Romeo_and_juliet_brown.jpg/250px-Romeo_and_juliet_brown.jpg
-0100021|George Orwell|1984|https://upload.wikimedia.org/wikipedia/commons/5/51/1984_first_edition_cover.jpg
+0100021|George Orwell|1984|https://thewonk.in/wp-content/uploads/2024/02/ninteen-eighty-four-book-review.jpg
 pg25344|Nathaniel Hawthorne|The Scarlet Letter|https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/The_Scarlet_Letter_title_page.jpg/250px-The_Scarlet_Letter_title_page.jpg
 pg1342|Jane Austen|Pride and Prejudice|https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg
 pg84|Mary Wollstonecraft Shelley|Frankenstein; Or, The Modern Prometheus|https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Christie%27s_auction_scan_of_Frankenstein_1818.jpg/250px-Christie%27s_auction_scan_of_Frankenstein_1818.jpg

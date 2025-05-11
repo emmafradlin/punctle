@@ -211,7 +211,7 @@ function setupTotals(){
 
     document.getElementById("played").innerHTML = `${played}<br/>Played`;
     document.getElementById("winpct").innerHTML = `${win_pct}<br/>Win%`;
-    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily<br/>Challenge" : "Level: " + level[0].toUpperCase() + level.slice(1);
+    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily Challenge" : "Level: " + level[0].toUpperCase() + level.slice(1);
 }
 
 function setupStats(){
@@ -300,7 +300,7 @@ async function newGame() {
         calendarDisplay = "block";
         document.getElementById('nextGame').style.display = "none";        
         //console.log(`Starting daily challange for ${date} game with level ${level}`);
-        modeText = "Daily Challenge for " + date;
+        modeText = "Daily Challenge for " + new Date(date).toLocaleDateString();
         modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
 
     } else {
@@ -658,6 +658,7 @@ function getCorrectAnswer() {
 
 //adding dropboxes
 function renderSentenceWithDropBoxes(text) {
+    console.log("renderSentenceWithDropBoxes qq")
     sentence.innerHTML = '';
     const words = text.trim().split(/\s+/);
 
@@ -857,6 +858,7 @@ function enableDropBoxes() {
 
 //disabling the keyboard
 function disableKeyboard() {
+    console.log("disableKeyboard qq")
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => {
         key.setAttribute('draggable', false);
@@ -901,7 +903,7 @@ function comparePunctuation() {
     if (!gameOver) {
         if (punctuationCount == wordLength) {
             if (!submitted && currentlyViewing == -1) {
-
+                disableDropBoxes();
                 let correctOnlyPunctuation = correctPunctuation.map(item => item.punctuation);
                 const userOnlyPunctuation = createUserArray();
 
@@ -1041,9 +1043,7 @@ function comparePunctuation() {
                         gameOver = true;
                         endGame(false);
                     }
-                }
-                
-
+                }               
             } else {
                 //if currently viewing shake the button of what is moving
                 if (currentlyViewing != -1) {
@@ -1063,7 +1063,6 @@ function comparePunctuation() {
                 enableSeeGuessButtons(currentGuess);
             }
         } else {
-
             //not enough punctuation so shake the boxes
             const boxes = document.querySelectorAll('.box');
             const start = currentGuess * wordLength;
@@ -1081,7 +1080,6 @@ function comparePunctuation() {
 
 
             showToast("Not enough punctuation");
-
         }
     }
 }
