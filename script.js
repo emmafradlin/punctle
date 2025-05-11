@@ -181,9 +181,9 @@ function setupChart(){
         type:"bar",
         orientation:"h",
         marker: {
-            color:"blue",
+            color:"rgb(62, 159, 102)",
             line: {
-                color: 'blue',
+                color: 'rgb(62, 159, 102)',
                 width: 10
             }
         }
@@ -191,7 +191,10 @@ function setupChart(){
 
     const layout = {
         margin: {l: 20, r: 0, b: 0, t: 20},
-        font: {size: 16}
+        font: {
+            size: 16,
+            family: 'sans-serif'
+        }
     };
 
     if (Math.max(...xArray) == 0)
@@ -208,7 +211,7 @@ function setupTotals(){
 
     document.getElementById("played").innerHTML = `${played}<br/>Played`;
     document.getElementById("winpct").innerHTML = `${win_pct}<br/>Win%`;
-    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily<br/>Challenge" : "Level<br/>" + level[0].toUpperCase() + level.slice(1);
+    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily<br/>Challenge" : "Level: " + level[0].toUpperCase() + level.slice(1);
 }
 
 function setupStats(){
@@ -298,14 +301,16 @@ async function newGame() {
         document.getElementById('nextGame').style.display = "none";        
         //console.log(`Starting daily challange for ${date} game with level ${level}`);
         modeText = "Daily Challenge for " + date;
+        modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
+
     } else {
         level = mode;
         calendarDisplay = "none";
         document.getElementById('nextGame').style.display = "block";
         console.log("Starting new game with level: " + level);
+        modeText += "Level: " + level[0].toUpperCase() + level.slice(1);
     }
     
-    modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
     document.getElementById("mode").innerHTML = modeText;
 
     setupStats();
@@ -372,8 +377,8 @@ function getRandomSentence() {
         const sentenceData = sentences[randomIndex];
         const bookData = allBooks.get(sentenceData.book_id);
 
-        document.getElementById("author").innerText = bookData.author;
-        document.getElementById("title").innerText = bookData.title;
+        document.getElementById("author").innerText = "By: " + bookData.author;
+        document.getElementById("title").innerText = "\"" + bookData.title + "\"";
         document.getElementById("info_img").setAttribute("src", bookData.image);
 
         randomSentence = sentenceData.sentence;

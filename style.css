@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,7 @@ body {
 }
 
 #sentence {
+  font-family: sans-serif;
   display: flex;
   max-width: 80vw;
   text-align: center;
@@ -30,6 +31,17 @@ body {
   justify-content: center;
   left: 10vw;
   gap: 0.5vw;
+}
+
+#mode {
+    color: black;
+    font-weight: bold;
+    font-size: 4vh;
+    font-family: Helvetica;
+    line-height: 1;      /* Prevent excessive line spacing */
+    margin-top: 0;       /* Remove extra top margin */
+    margin-bottom: 0;    /* Optional: remove bottom margin */
+    text-align: center;
 }
 
 .word {
@@ -55,6 +67,7 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  border-radius: 0.5vw;
 }
 
 #grid {
@@ -106,7 +119,7 @@ button[state="disabled"] {
 }
 
 button[state="highlight"] {
-  background-color: red;
+  background-color: rgb(235, 71, 71);
 }
 
 
@@ -142,6 +155,12 @@ button[state="highlight"] {
 }
 
 
+#modeSentence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #results, #controls {
   display: flex;
   justify-content: center;
@@ -151,11 +170,22 @@ button[state="highlight"] {
   margin: 0 auto;
 }
 
+#enter-button:hover, #nextGuess:hover, #nextGame:hover, #level:hover {
+  background-color: #1c693f;
+
+}
+
 #enter-button, #nextGuess, #nextGame, #level {
   display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: center;
   margin-top: 5vh;
   gap: 8vh;
-  width: 4vw;
+  width: 5.5vw;
+  height: 6vh;
+  border-radius: 0.5vw;
+  background-color: #278751;
+  
 }
 
 @keyframes shake {
@@ -220,21 +250,43 @@ button[state="highlight"] {
   width: 30vw;
 }
 
-#stats_totals{
+#stats_totals {
   display: flex;
-  background-color: lightblue;
-  font-size: 1.2vw;
-  color: black;
-  height: 2em;
+  flex-direction: column;  /* Stack items vertically */
+  background-color: rgb(241, 244, 244);
+  font-size: 1.5vw;
+  color: rgb(0, 0, 0);
+  height: auto;  /* Allow height to grow based on content */
   justify-content: center;
   padding-top: 0.2vw;
   padding-bottom: 0.5vw;
+  align-items: center;  /* Center all items horizontally */
+  font-size: 2.5vh;
 }
 
 #stats_totals div {
-    padding-right: 1vw;
-    text-align: center;
+  padding-right: 1vw;
+  text-align: center;
 }
+
+#modeStats {
+  text-align: center;
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+#stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+#played, #winpct {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
 
 /* The sidepanel menu */
 .sidepanel {
@@ -334,11 +386,11 @@ button[state="highlight"] {
 .btn-group div {    
   transform: translateX(8em);
   font-weight: bold;
-  color: blue;
+  color: rgb(56, 56, 100);
 }
 
 .btn-close {
-    background-color: lightblue;    
+    background-color: rgb(241, 244, 244);    
 }
 
 .btn-close button {
@@ -348,6 +400,7 @@ button[state="highlight"] {
 
 .overlay {
   border: 0.5vw solid black;
+  border-radius: 0.7vw;
   display: none;
   position:absolute;
   top:50%;
@@ -361,12 +414,15 @@ button[state="highlight"] {
   
 #info {
     display: block;
-    background-color: lightblue;
-    width: 20vw;
+    background-color: rgb(241, 244, 244);
+    width: 25vw;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
+    color: black;
 }
 
 #info img {
     width: 20vw;
 }
+
+

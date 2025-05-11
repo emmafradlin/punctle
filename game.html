@@ -30,8 +30,10 @@
         <div id="stats">
             <div id="stats_totals">
                 <div id="modeStats"></div>
-                <div id="played"></div>
-                <div id="winpct"></div>
+                <div id="stat-row">
+                    <div id="played"></div>
+                    <div id="winpct"></div>
+                </div>
             </div>
             <div id="calendar"></div>
             <div id="myPlot"></div>
@@ -43,15 +45,18 @@
             <button  onclick="document.getElementById('overlay2').style.display = 'none'">&#128473;</button>
         </div>
         <div id="info">            
-            <div><span id="author"></span></div>
             <div><span id="title"></span></div>
+            <div><span id="author"></span></div>
             <div><img id="info_img" /></div>
         </div>
     </div>
 
     <div id="game-wrapper">
         <div id = "controls">
-            <div id="sentence"></div>                     
+            <div id="modeSentence">
+                <div id="mode"></div>
+                <div id="sentence"></div>
+            </div>                  
         </div>
 
         <div id = "results">
@@ -65,7 +70,6 @@
                 <button class = "viewSentence" id="see6" state="disabled">See in sentence</button>
             </div> 
             <div class="btn-group">
-                <div id="mode"></div>
                 <button id="enter-button" class="button">Check Guess</button>
                 <button id="nextGuess" class="button">Next Guess</button>
                 <button id="nextGame" class="button">Next Round</button>                
