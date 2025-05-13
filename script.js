@@ -71,11 +71,16 @@ function RNG(seed) {
 }
 
 let selectedDate = null;
-function getDailyChallangeDate(){     
-    if (selectedDate != null)   
-        return selectedDate;
+function getDailyChallengeDt(){     
+    return selectedDate != null ? new Date(selectedDate + " EDT") : new Date();
+}
 
-    return formatDate(new Date());
+function getDailyChallengeDate(){
+    return formatDate(getDailyChallengeDt());
+}
+
+function getDailyChallengeDateDisplay(){
+    return getDailyChallengeDt().toLocaleDateString();
 }
 
 function formatDate(d){
@@ -97,6 +102,7 @@ function getRandomInt(max) {
 newGame();
 
 function openStats() {
+    setupStats();
     document.getElementById("overlay1").style.display = "block";
 }
 
@@ -130,11 +136,11 @@ function setupCalendar(){
         selectedWeekends: [],
         dateMax: formatDate(new Date()),
         selectedHolidays: all_dates,
-        selectedDates: [getDailyChallangeDate()],
+        selectedDates: [getDailyChallengeDate()],
         onClickDate(self) {
             if (self.context.selectedDates.length > 0){
                 d = self.context.selectedDates[0];
-                if (d != getDailyChallangeDate()){
+                if (d != getDailyChallengeDate()){
                     selectedDate = d;
                     newGame();
                 }
@@ -197,8 +203,11 @@ function setupChart(){
         }
     };
 
-    if (Math.max(...xArray) == 0)
+    const maxValue = Math.max(...xArray);
+    if (maxValue == 0)
         layout.xaxis = {range: [0, 1]}
+    else
+        layout.xaxis = {range: [0, maxValue*1.1]}
 
     Plotly.newPlot("myPlot", data, layout, {staticPlot: true});
 }
@@ -291,7 +300,7 @@ async function newGame() {
     let modeText = "";
 
     if (mode == "daily"){
-        let date = getDailyChallangeDate();
+        let date = getDailyChallengeDate();
         seededRandom = RNG(new Date(date).getTime());
         let levelIndex = getSeededRandom(3);
         //console.log("Daily challange level index: ", levelIndex);
@@ -299,7 +308,7 @@ async function newGame() {
         calendarDisplay = "block";
         document.getElementById('nextGame').style.display = "none";        
         console.log(`Starting daily challange for ${date} game with level ${level}`);
-        modeText = "Daily Challenge for " + new Date(date).toLocaleDateString("en-US", {timeZone: "America/New_York"});
+        modeText = "Daily Challenge for " + getDailyChallengeDateDisplay();
         modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
 
     } else {
@@ -311,8 +320,6 @@ async function newGame() {
     }
     
     document.getElementById("mode").innerHTML = modeText;
-
-    setupStats();
     document.getElementById("calendar").style.display = calendarDisplay;
     
     //generate random sentence and whole screen
@@ -1296,14 +1303,12 @@ function updateStats(won, numGuesses){
         incrementLocalStorage(mode + ":win:" + numGuesses);
         incrementLocalStorage(mode + ":win");
         if (mode == "daily")
-            localStorage.setItem("d:" + getDailyChallangeDate(), 1);                    
+            localStorage.setItem("d:" + getDailyChallengeDate(), 1);                    
     } else {
         incrementLocalStorage(mode + ":loss");
         if (mode == "daily")
-            localStorage.setItem("d:" + getDailyChallangeDate(), 0);
+            localStorage.setItem("d:" + getDailyChallengeDate(), 0);
     }
-    
-    setupStats();
 }
 
 function incrementLocalStorage(key){
