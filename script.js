@@ -244,7 +244,6 @@ function getUrlParam(param){
 }
 
 function resetVariables(){
-    console.log("resetting variables");
     gameOver = false;
 
     currentlyViewing = -1;
@@ -299,8 +298,8 @@ async function newGame() {
         level = ["easy", "medium", "hard"][levelIndex];
         calendarDisplay = "block";
         document.getElementById('nextGame').style.display = "none";        
-        //console.log(`Starting daily challange for ${date} game with level ${level}`);
-        modeText = "Daily Challenge for " + new Date(date).toLocaleDateString();
+        console.log(`Starting daily challange for ${date} game with level ${level}`);
+        modeText = "Daily Challenge for " + new Date(date).toLocaleDateString("en-US", {timeZone: "America/New_York"});
         modeText += "<br/>Level: " + level[0].toUpperCase() + level.slice(1);
 
     } else {
@@ -658,7 +657,6 @@ function getCorrectAnswer() {
 
 //adding dropboxes
 function renderSentenceWithDropBoxes(text) {
-    console.log("renderSentenceWithDropBoxes qq")
     sentence.innerHTML = '';
     const words = text.trim().split(/\s+/);
 
@@ -858,7 +856,6 @@ function enableDropBoxes() {
 
 //disabling the keyboard
 function disableKeyboard() {
-    console.log("disableKeyboard qq")
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => {
         key.setAttribute('draggable', false);
