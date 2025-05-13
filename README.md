@@ -3,7 +3,7 @@
 Punctle is a game similar to Wordle but instead of words, you'll be given sentences with some of the punctuation stripped out.<br/>
 Your task is to fill in the missing punctuation in only 5 guesses. Have fun!
 
-Punctle can be played [here](INSERT LINK)
+Punctle can be played [here](https://emmafradlin.github.io/punctle/)
 
 ## Features
 - Simple drag and drop system
