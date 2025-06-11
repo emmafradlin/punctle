@@ -110,6 +110,14 @@ function closeStats() {
     document.getElementById("overlay1").style.display = "none";
 }
 
+function openQuestionMark() {
+    document.getElementById("overlay3").style.display = "block";
+}
+
+function closeQuestionMark() {
+    document.getElementById("overlay3").style.display = "none";
+}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     let modal = document.getElementById("stats");
@@ -220,7 +228,8 @@ function setupTotals(){
 
     document.getElementById("played").innerHTML = `${played}<br/>Played`;
     document.getElementById("winpct").innerHTML = `${win_pct}<br/>Win%`;
-    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily Challenge" : "Level: " + level[0].toUpperCase() + level.slice(1);
+    
+    document.getElementById("modeStats").innerHTML = mode == "daily" ? "Daily Challenge <br>Level: " +  level[0].toUpperCase() + level.slice(1): "Level: " + level[0].toUpperCase() + level.slice(1);
 }
 
 function setupStats(){
@@ -319,7 +328,9 @@ async function newGame() {
         modeText += "Level: " + level[0].toUpperCase() + level.slice(1);
     }
     
-    document.getElementById("mode").innerHTML = modeText;
+    //document.getElementById("mode").src = "images/punctleLogo.png"
+    //document.getElementById("mode").innerHTML = "PUNCTLE"
+    //document.getElementById("mode").innerHTML = modeText;
     document.getElementById("calendar").style.display = calendarDisplay;
     
     //generate random sentence and whole screen

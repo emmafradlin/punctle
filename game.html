@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Punctuation Game</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css" rel="stylesheet">    
 </head>
@@ -20,8 +21,37 @@
     </div>
     <div id = "menu">
         <button class="openbtn" onclick="openNav()">&#9776;</button>
-        <button id = "statsbtn" class="openbtn" onclick="openStats()">&#128202;</button>        
+        <button id = "statsbtn" class="openbtn" onclick="openStats()">&#128202;</button> 
+        <button id="questionMark" class="openbtn" onclick="openQuestionMark()">
+            <img src="images/questionMarkImage.png" alt="Help" style="width: 1.5em; height: 1.5em; margin-top: 1vh">
+        </button>
     </div>    
+
+    <div id="overlay3" class="overlay">
+        <div class="btn-close">          
+            <button class="btn-close" onclick="closeQuestionMark()">&#128473;</button>
+        </div>
+
+        <div id="instructionsContainer" style="display: flex; flex-direction: column; align-items: center; width: 45vw; margin: 0 auto;">
+            <h2 id="instructionsTitle" style="margin: 0; padding: 0; text-align: center;">Instructions</h2>
+            <div id="instructionsText" style="padding: 0; margin: 0; font-size: 1.2em; line-height: 1.4;">
+            <ul style="margin: 0 0 10px 20px; padding: 0;">
+                <li>Drag punctuation marks into the sentence. They will appear in the grid as you place them.</li>
+                <li>Once done, click <strong>Check Guess</strong> to submit your punctuation.</li>
+                <li>After submitting, click <strong>Next Guess</strong> to try again.</li>
+                <li>Keep guessing until you use all six tries or correctly punctuate the sentence to win.</li>
+                <li>Use the <strong>See in Sentence</strong> buttons to view your past guesses.</li>
+            </ul>
+            <ul style="margin: 0 0 0 20px; padding: 0; list-style-type: none;">
+                <li><span style="color: green; font-weight: bold;">Green:</span> Correct punctuation in the right place</li>
+                <li><span style="color: goldenrod; font-weight: bold;">Yellow:</span> Correct punctuation in the wrong place</li>
+                <li><span style="color: gray; font-weight: bold;">Gray:</span> Punctuation not in the sentence</li>
+            </ul>
+            </div>
+
+        </div>
+    </div>
+
 
     <div id="overlay1" class="overlay">
         <div class="btn-close">          
@@ -56,7 +86,8 @@
     <div id="game-wrapper">
         <div id = "controls">
             <div id="modeSentence">
-                <div id="mode"></div>
+                <div id="mode"><img id = "modeImage" src = "images/punctleLogo.png">
+                </div>
                 <div id="sentence"></div>
             </div>                  
         </div>
@@ -80,7 +111,7 @@
         
         <div id="keyboard"></div>
         <button id = "infobtn" class="openbtn" onclick="document.getElementById('overlay2').style.display = 'block'">&#128712;</button>        
-    </div>            
+                
 
     <div id="toast"></div>
 

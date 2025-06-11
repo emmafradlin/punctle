@@ -1,5 +1,5 @@
 body {
-  font-family: serif;
+  font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,6 +7,10 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
+}
+
+#modeImage {
+  width: 22vw;
 }
 
 #game-wrapper {
@@ -20,9 +24,9 @@ body {
 }
 
 #sentence {
-  font-family: sans-serif;
   display: flex;
   max-width: 80vw;
+  max-height: 17vh;
   text-align: center;
   word-wrap: break-word;
   margin-top: 3vh;
@@ -34,14 +38,13 @@ body {
 }
 
 #mode {
-    color: black;
-    font-weight: bold;
-    font-size: 4vh;
-    font-family: Helvetica;
-    line-height: 1;      /* Prevent excessive line spacing */
-    margin-top: 0;       /* Remove extra top margin */
-    margin-bottom: 0;    /* Optional: remove bottom margin */
-    text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 4vh;
+  line-height: 1;      /* Prevent excessive line spacing */
+  margin-top: 0;       /* Remove extra top margin */
+  margin-bottom: 0;    /* Optional: remove bottom margin */
+  text-align: center;
 }
 
 .word {
@@ -141,17 +144,11 @@ button[state="highlight"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 1vw;
+  border-radius: 2vw;
 }
 
 .key:hover {
   background-color: #bbb;
-}
-
-
-/* can't highlight */
-#sentence, .box, #seeSentence, #enter-button, #nextGuess, .key, #toast, #nextGame {
-  user-select: none;
 }
 
 
@@ -181,11 +178,12 @@ button[state="highlight"] {
   justify-content: center;
   margin-top: 5vh;
   gap: 8vh;
-  width: 5.5vw;
-  height: 6vh;
+  width: 8vw;
+  height: 7vh;
   border-radius: 0.5vw;
   background-color: #278751;
-  
+  font-size: 1.3vw;
+  font-weight: bold;
 }
 
 @keyframes shake {
@@ -359,10 +357,15 @@ button[state="highlight"] {
 }
 
 #infobtn {  
-  font-size: 2vw;
+  font-size: 4vw;
   color: black;
   transform: translateY(-2em);
-  width: 1em;
+  width: 1.2em;
+  height: 1.2em;
+
+  display: flex;             /* centers content */
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
 }
 
 #menu {
@@ -418,7 +421,23 @@ button[state="highlight"] {
   z-index: 20;
   cursor: grab;
 }    
-  
+
+#instructionsContainer {
+  background-color: rgb(241, 244, 244);
+  max-width: 80vw;       /* Limit width to 80% of viewport */
+  margin: 0 auto;        /* Center horizontally */
+  text-align: center;    /* Center text inside */
+  font-size: 1.5vw;
+  color: black;
+  padding: 1rem;         /* Optional padding inside container */
+}
+
+#instructionsText {
+  margin: 0;
+  padding: 0;
+}
+
+
 #info {
     display: block;
     background-color: rgb(241, 244, 244);
